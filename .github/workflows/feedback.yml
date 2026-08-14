@@ -1,0 +1,30 @@
+name: Parse Digest Feedback
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  run:
+    if: contains(github.event.issue.labels.*.name, 'job-digest')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run parse-feedback
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+      - name: Commit feedback
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/jobs.db
+          git diff --staged --quiet || git commit -m "Record feedback [skip ci]"
+          git push

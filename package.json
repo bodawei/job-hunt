@@ -1,0 +1,17 @@
+{
+  "name": "job-hunt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "ingest": "node scripts/ingest.js",
+    "normalize": "node scripts/normalize.js",
+    "score": "node scripts/score.js",
+    "digest": "node scripts/digest.js",
+    "parse-feedback": "node scripts/parse-feedback.js"
+  },
+  "dependencies": {}
+}
