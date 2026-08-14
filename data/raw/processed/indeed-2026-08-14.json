@@ -1,0 +1,111 @@
+{
+  "source": "indeed",
+  "fetched_at": "2026-08-14T00:00:00Z",
+  "search": {
+    "query": "software engineer",
+    "location": "San Jose, CA (requested: within 5 miles; Indeed API does not support a radius parameter, city-level match only)",
+    "country_code": "US"
+  },
+  "jobs": [
+    {
+      "title": "Senior Software Engineer, Agent Eval Platform",
+      "company": "ServiceNow",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aa8k8dbzk6rd",
+      "posted_at": "June 24, 2026",
+      "job_type": "Full-time",
+      "compensation": "$161,300 - $274,200 a year",
+      "description": "Moveworks (acquired by ServiceNow) is hiring for the judgement layer of its agent evaluation platform: rubrics, judges, calibration against human labels for scoring multi-step agent trajectories. Three focus areas: eval orchestration at scale, agent observability/tracing (OpenTelemetry-native), and stateful simulation of enterprise systems. Requires 5+ years building production backend/infra systems, strong Python or Go, experience with distributed systems and making non-deterministic systems measurable."
+    },
+    {
+      "title": "(USA) Software Engineer III",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aalhszvphdfc",
+      "posted_at": "August 14, 2026",
+      "job_type": null,
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Dynamic Inventory team (Sunnyvale/Bangalore) — forecasting demand and optimizing inventory via ETL and ML pipelines. Requires object-oriented design experience, API/platform development, CI/CD, and 2-4 years experience depending on degree. Mentors small engineering teams."
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Cisco",
+      "location": "San Jose, CA",
+      "url": "https://to.indeed.com/aa6tblddv2f8",
+      "posted_at": "August 13, 2026",
+      "job_type": "Full-time",
+      "compensation": "$138,100 - $256,000 a year",
+      "description": "Cisco Catalyst Center Platform team — cloud-native network management software. Build scalable services using Kubernetes, Java, Go, Python. Requires 5+ years professional software development, cloud-native/distributed apps on Kubernetes, RESTful APIs/microservices, Git/CI/CD."
+    },
+    {
+      "title": "(USA) Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aatzsqc4wdfx",
+      "posted_at": "August 14, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "Marketplace Engineering team — seller lifecycle, pricing, inventory platforms for walmart.com. Cloud-native architecture, AI/ML integration, technical leadership/mentoring. Requires 4-6 years experience depending on degree, strong Java, microservices/containers."
+    },
+    {
+      "title": "Senior Software Engineer, Full-Stack",
+      "company": "NVIDIA",
+      "location": "Santa Clara, CA",
+      "url": "https://to.indeed.com/aayzkqsmjhs6",
+      "posted_at": "August 14, 2026",
+      "job_type": "Full-time",
+      "compensation": "$184,000 - $356,500 a year",
+      "description": "VLSI Productivity and Infrastructure team — internal tools/platforms for chip design engineers (build automation, ML, databases, web apps). Requires 6+ years full-stack development, React preferred frontend, Node.js/Python backend, scalable APIs, data storage/query optimization."
+    },
+    {
+      "title": "(USA) Distinguished, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aatx9b89mvm9",
+      "posted_at": "August 14, 2026",
+      "job_type": null,
+      "compensation": "$130,000 - $338,000 a year",
+      "description": "Walmart Data Ventures / Scintilla platform — customer-centric insights for CPGs and merchants. Architecture/design/hands-on dev of scalable cloud-native AI-powered platforms. Requires deep Java/J2EE/Spring/JVM, React, REST/GraphQL, Kafka, SQL/NoSQL, 6-8 years experience depending on degree."
+    },
+    {
+      "title": "(USA) Senior, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa9vvnchrz4g",
+      "posted_at": "August 13, 2026",
+      "job_type": null,
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Ads team — e-commerce advertising targeting/optimization/reporting. Full stack (JS/TS/Python/Java/Rust/Dart/C++), AI/ML integration, CI/CD. Note: immigration sponsorship NOT available for this position. Requires 3-5 years experience depending on degree."
+    },
+    {
+      "title": "Software Engineer, Fullstack",
+      "company": "Glean Technologies",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aaxwwgyrvmzq",
+      "posted_at": "May 22, 2026",
+      "job_type": null,
+      "compensation": "$140,000 - $265,000 a year",
+      "description": "Glean (Work AI / enterprise search platform) — own greenfield user-facing features end to end, REST APIs, React frontend, Go/Java/TypeScript. Hybrid role, 3 days/week in San Francisco or Palo Alto office (not San Jose)."
+    },
+    {
+      "title": "Senior, Software Engineer - Frontend",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aavpvg9dzvb6",
+      "posted_at": "February 28, 2026",
+      "job_type": null,
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "International Technology team frontend lead — React, Redux, Node.js, GraphQL, Jest, Storybook. Requires 8+ years product development experience for scalable web applications, mentoring responsibilities."
+    },
+    {
+      "title": "Software Engineer II- GraphQL Platform",
+      "company": "Wayfair",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aafywxkhk2qq",
+      "posted_at": "August 05, 2026",
+      "job_type": "Full-time",
+      "compensation": "$165,000 - $181,500 a year",
+      "description": "GraphQL Platform team — federated GraphQL infrastructure/tooling for thousands of internal engineers. Hybrid, in-office Tue-Thu in Mountain View. Requires 2+ years distributed services experience, Java/TypeScript/Rust/JS, Kubernetes/Docker curiosity."
+    }
+  ]
+}
