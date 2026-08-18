@@ -11,7 +11,7 @@ Run a manual Indeed ingest:
    keeping, optionally call `get_job_details` to pull the full description.
 3. Write the results to `data/raw/indeed-<YYYY-MM-DD>.json` in job-hunt, following the
    schema in `data/raw/SCHEMA.md` (source: "indeed", fetched_at, jobs[]).
-4. Run `npm run 2normalize-jobs` from the job-hunt repo root to load them into `data/jobs.db`
+4. Run `npm run normalize` from the job-hunt repo root to load them into `data/jobs.db`
    and archive the raw file to `data/raw/processed/`.
 5. Report a short summary: how many jobs were found, how many were new (vs. deduped
    against existing rows), and remind the user the changes are uncommitted until they

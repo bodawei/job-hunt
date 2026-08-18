@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
-      - run: npm run 6learn-from-issue-comments
+      - run: npm run parse-feedback
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMENT_ID: ${{ github.event.comment.id }}

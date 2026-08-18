@@ -17,12 +17,12 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
-      - run: npm run 1ingest-jobs
-      - run: npm run 2normalize-jobs
-      - run: npm run 3score-jobs
+      - run: npm run ingest
+      - run: npm run normalize
+      - run: npm run score
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      - run: npm run 4post-issue
+      - run: npm run digest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit updated jobs.db
