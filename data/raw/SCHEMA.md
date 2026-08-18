@@ -31,5 +31,5 @@ fit them.
 ## Indeed workflow (manual)
 
 Ask Claude, in a session with the Indeed connector attached, to search Indeed for your
-criteria and write a dump here following this schema. Then run `npm run normalize` and
+criteria and write a dump here following this schema. Then run `npm run 2normalize-jobs` and
 commit `data/jobs.db` plus the archived file under `data/raw/processed/`.
