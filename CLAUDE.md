@@ -75,13 +75,23 @@ actually improves the criteria over time (not just thumbs up/down).
 
 ## Not yet built (natural next steps)
 
-- [ ] `criteria.md` — draft must-haves, dealbreakers, nice-to-haves, category defs
-- [ ] `data/jobs.db` schema (jobs, feedback, seen-hash tables)
-- [ ] `daily.yml` workflow + `ingest.js` / `normalize.js` / `score.js` / `digest.js`
-- [ ] `feedback.yml` workflow + `parse-feedback.js`
+- [x] `data/jobs.db` schema (jobs, feedback, seen-hash tables)
+- [x] `daily.yml` + `feedback.yml` workflows
+- [x] `normalize.js`, `score.js`, `digest.js`, `parse-feedback.js` implemented
+- [x] `criteria.md` — placeholder/permissive version only, to validate the pipeline
+      end-to-end (deliberate, see file header). Real must-haves/dealbreakers/category
+      definitions still need to be drafted with the user once there's feedback to
+      react to.
+- [ ] `ingest.js` — still a stub; real ingestion so far is the manual
+      `/ingest-indeed` path only (see README "Pipeline")
 - [ ] Decide specific job boards + target company career pages to start with
 - [ ] Test Playwright reliability against 2-3 real target company sites before
       committing to the scraping approach broadly
+- [ ] Add `ANTHROPIC_API_KEY` as a repo secret (needed by `daily.yml`'s `score`
+      step) — not yet set, has to be done by the user via `gh secret set` or the
+      GitHub UI
+- [ ] Once `feedback` has real rows, add retrieval-based few-shot to `score.js`
+      (see TODO in that file)
 
 ## Explicitly deferred (don't build yet)
 
