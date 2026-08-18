@@ -3,9 +3,10 @@ Explore using an LLM to help me retrieve/scrape relevant info about job availabi
 
 ## Pipeline
 
-See [CLAUDE.md](CLAUDE.md) for full design context. Short version: `ingest.js` /
-`/ingest-indeed` → `normalize.js` → `score.js` → `digest.js` post a new GitHub Issue
-(labeled `job-digest`) per run → you comment feedback on it → `parse-feedback.js`
+See [CLAUDE.md](CLAUDE.md) for full design context. The npm scripts are numbered in
+pipeline order — `1ingest-jobs` → `2normalize-jobs` → `3score-jobs` → `4post-issue`
+→ **5: you**, reviewing the digest issue and commenting feedback on it (deliberately
+not scripted — see "Human-in-the-loop" in CLAUDE.md) → `6learn-from-issue-comments`
 records it.
 
 ## Leaving feedback on a digest issue
