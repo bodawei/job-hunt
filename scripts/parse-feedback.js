@@ -15,19 +15,30 @@ function fetchCommentBody(commentId) {
   });
 }
 
-// Parses a small key: value block out of a comment body, e.g.:
-//   job: 3
-//   category: backend
-//   score: down
-//   reason: dealbreaker - hybrid 5 days/week, not open to relocation
-// See README.md "Leaving feedback" for the format contract.
+const JOB_LINE = /^\s*job\s*:?\s*(\d+)\s*$/i;
+const FIELD_LINE = /^\s*(category|score|reason)\s*:?\s+(.+)$/i;
+
+// A comment can carry feedback on multiple jobs. Each job's own line
+// ("job 5" or "job: 5" — colon optional, people type this both ways)
+// starts a new block; category/score/reason lines below it (colon also
+// optional) belong to that job until the next "job" line. See README.md
+// "Leaving feedback" for the format contract.
 function parseFeedback(body) {
-  const fields = {};
+  const blocks = [];
+  let current = null;
+
   for (const line of body.split('\n')) {
-    const match = line.match(/^\s*(job|category|score|reason)\s*:\s*(.+)$/i);
-    if (match) fields[match[1].toLowerCase()] = match[2].trim();
+    const jobMatch = line.match(JOB_LINE);
+    if (jobMatch) {
+      current = { jobId: Number(jobMatch[1]) };
+      blocks.push(current);
+      continue;
+    }
+    const fieldMatch = current && line.match(FIELD_LINE);
+    if (fieldMatch) current[fieldMatch[1].toLowerCase()] = fieldMatch[2].trim();
   }
-  return fields;
+
+  return blocks.filter((block) => block.reason);
 }
 
 async function main() {
@@ -35,27 +46,29 @@ async function main() {
   if (!commentId) throw new Error('COMMENT_ID env var is required');
 
   const body = fetchCommentBody(commentId);
-  const fields = parseFeedback(body);
+  const blocks = parseFeedback(body);
 
-  if (!fields.job || !fields.reason) {
-    console.log('Comment is not structured feedback (missing "job:" or "reason:") — skipping.');
+  if (blocks.length === 0) {
+    console.log('Comment has no structured feedback ("job <id>" + "reason" pair) — skipping.');
     return;
   }
 
-  const jobId = Number(fields.job);
   const db = openDb();
-  const job = db.prepare('SELECT id FROM jobs WHERE id = ?').get(jobId);
-  if (!job) {
-    db.close();
-    throw new Error(`No job with id ${jobId} — check the "job:" field in the comment.`);
-  }
-
-  db.prepare(
+  const getJob = db.prepare('SELECT id FROM jobs WHERE id = ?');
+  const insert = db.prepare(
     `INSERT INTO feedback (job_id, corrected_category, corrected_score_direction, reason, github_comment_id)
      VALUES (?, ?, ?, ?, ?)`
-  ).run(jobId, fields.category ?? null, fields.score ?? null, fields.reason, Number(commentId));
+  );
 
-  console.log(`Recorded feedback on job #${jobId} from comment ${commentId}.`);
+  for (const block of blocks) {
+    if (!getJob.get(block.jobId)) {
+      console.log(`No job with id ${block.jobId} — skipping that block.`);
+      continue;
+    }
+    insert.run(block.jobId, block.category ?? null, block.score ?? null, block.reason, Number(commentId));
+    console.log(`Recorded feedback on job #${block.jobId} from comment ${commentId}.`);
+  }
+
   db.close();
 }
 
