@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS jobs (
   source TEXT NOT NULL,
   content_hash TEXT NOT NULL UNIQUE,
   posted_at TEXT,
+  job_type TEXT,
+  compensation TEXT,
   category TEXT,
   fit_score REAL,
   reasoning TEXT,

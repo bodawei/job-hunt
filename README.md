@@ -9,6 +9,27 @@ pipeline order — `1ingest-jobs` → `2normalize-jobs` → `3score-jobs` → `4
 not scripted — see "Human-in-the-loop" in CLAUDE.md) → `6learn-from-issue-comments`
 records it.
 
+## Configuring what gets searched
+
+`/ingest-indeed` doesn't take a search term as an argument — it reads
+[search-targets.json](search-targets.json) at the repo root and searches every target
+listed there, merging all the results into one raw dump. Edit that file to change what
+gets searched; no need to touch the command itself. Each entry:
+
+```json
+{ "name": "swe-san-jose", "search": "Software Engineer", "location": "San Jose, CA", "country_code": "US" }
+```
+
+`name` is just a label shown in the run summary. `search`, `location`, and
+`country_code` map straight to the Indeed connector's `search_jobs` parameters
+(`job_type` is also accepted, optional). Multiple targets exist because a single
+`search_jobs` call caps at 10 results with no pagination — running a few varied
+searches (different titles/seniority levels, say) is the only way to see more than 10
+postings in one pull.
+
+`/ingest-indeed <path>` runs a different targets file instead of the default, for a
+one-off search without editing `search-targets.json`.
+
 ## Leaving feedback on a digest issue
 
 Each job in a digest is headed `### #<id> — <title> @ <company>`. To leave structured

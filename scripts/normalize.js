@@ -8,8 +8,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const RAW_DIR = path.join(__dirname, '../data/raw');
 const PROCESSED_DIR = path.join(RAW_DIR, 'processed');
 
+function normalizeText(text) {
+  return text.trim().replace(/\s+/g, ' ');
+}
+
+// Never hash on `url` — Indeed mints a fresh tracking URL per search call even for
+// the exact same posting, so it guarantees false "new" rows. Description is the
+// stable identity signal; when it's missing, fall back to the same weaker signal the
+// /ingest-indeed command already trusts for its own in-run pre-dedupe.
 function contentHash(job) {
-  return createHash('sha256').update(`${job.company}|${job.title}|${job.url}`).digest('hex');
+  const identity = job.description
+    ? `${job.company}|${job.title}|${job.location}|${normalizeText(job.description)}`
+    : `${job.company}|${job.title}|${job.location}|${job.posted_at}|${job.compensation}`;
+  return createHash('sha256').update(identity).digest('hex');
 }
 
 async function main() {
@@ -22,8 +33,8 @@ async function main() {
   const db = openDb();
   const insert = db.prepare(`
     INSERT OR IGNORE INTO jobs
-      (company, title, url, description, location, source, content_hash, posted_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      (company, title, url, description, location, source, content_hash, posted_at, job_type, compensation)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
   for (const file of files) {
@@ -38,7 +49,9 @@ async function main() {
         job.location ?? null,
         source,
         contentHash(job),
-        job.posted_at ?? null
+        job.posted_at ?? null,
+        job.job_type ?? null,
+        job.compensation ?? null
       );
     }
     renameSync(filePath, path.join(PROCESSED_DIR, file));
