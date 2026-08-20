@@ -43,11 +43,15 @@ actually improves the criteria over time (not just thumbs up/down).
                              nice-to-haves, category definitions. This is the
                              single most important file in the project — treat
                              edits to it as the main lever for improving results.
+/search-targets.json         Named Indeed search targets (title/location/country)
+                             that /ingest-indeed fans out over by default. Edit
+                             this to change what gets searched.
 /scripts/ingest.js           Pull listings: Greenhouse/Lever/Ashby APIs where
                              available, Playwright for JS-heavy career pages
                              without a public feed.
 /scripts/normalize.js        Map raw listings to common schema; hash-based dedup
-                             on (company + title + URL).
+                             on (company + title + location + description) — never
+                             URL, which Indeed regenerates per search call.
 /scripts/score.js            For each new job: call Claude with the job description
                              + full criteria.md + the 5-10 most similar past,
                              feedback-annotated jobs (embedding similarity) →

@@ -1,0 +1,227 @@
+{
+  "source": "indeed",
+  "fetched_at": "2026-08-20T00:00:00Z",
+  "search_targets_used": "search-targets.json (swe-san-jose, senior-swe-san-jose, staff-swe-san-jose)",
+  "jobs": [
+    {
+      "title": "Senior, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa6j4vthl266",
+      "posted_at": "August 20, 2026",
+      "job_type": null,
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Membership Experience Engineering team (Walmart+) — mobile shopping journeys. Java/Node.js services, REST/GraphQL APIs. Requires 3-5 years experience depending on degree."
+    },
+    {
+      "title": "Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aanr4b6c4g6r",
+      "posted_at": "August 20, 2026",
+      "job_type": null,
+      "compensation": "$110,000 - $286,000 a year",
+      "description": "Media Planning and Order Management team — Agentic AI for ad campaign budget planning/recommendations. Cloud-native, microservices, JS/TS/Python/Java/Rust/Dart/C++. Requires 4-6 years experience depending on degree."
+    },
+    {
+      "title": "Staff Software Engineer",
+      "company": "PayPal",
+      "location": "San Jose, CA",
+      "url": "https://to.indeed.com/aavzjmr9lg9v",
+      "posted_at": "August 19, 2026",
+      "job_type": "Full-time",
+      "compensation": "$227,639 - $300,500 a year",
+      "description": "PayPal payments engine team, San Jose. iOS-focused staff role: 8+ years iOS dev (Swift/Objective-C, Cocoa Touch, Xcode), mobile architecture patterns (MVVM/VIPER/Clean), CI/CD for mobile. Hybrid 3 days/week. No sponsorship."
+    },
+    {
+      "title": "Software Engineer, Fullstack",
+      "company": "Glean Technologies",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aalmjbv9hvbd",
+      "posted_at": "May 22, 2026",
+      "job_type": null,
+      "compensation": "$140,000 - $265,000 a year",
+      "description": "Glean (Work AI / enterprise search platform) — own greenfield user-facing features end to end, REST APIs, React frontend, Go/Java/TypeScript. Hybrid, 3 days/week in San Francisco or Palo Alto office (not San Jose)."
+    },
+    {
+      "title": "(USA) Senior, Software Engineer - Full Stack",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aavjcr6jwfr9",
+      "posted_at": "August 19, 2026",
+      "job_type": "Full-time",
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Backbone Engineering team — Java, React, NextJS, Kubernetes. Full-time, onsite in Sunnyvale, not eligible for remote. No sponsorship. Requires 3-5 years experience depending on degree."
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Uber",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aafmmyznfwg7",
+      "posted_at": "August 19, 2026",
+      "job_type": "Full-time",
+      "compensation": "$264,514 - $317,417 a year",
+      "description": "Data and Storage teams — distributed storage platforms and high-performance data pipelines at scale. Requires Master's + 5 years (or equivalent), C++/Python/Java/Golang/Node.js, SQL/MySQL, distributed systems, system design. At least 50% in-office."
+    },
+    {
+      "title": "System Software Engineer",
+      "company": "Hewlett Packard Enterprise | HPE",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa4r8srn7xbd",
+      "posted_at": "April 06, 2026",
+      "job_type": "Full-time",
+      "compensation": "$120,500 - $243,000 a year",
+      "description": "Onsite role. Systems software design for distributed systems/OS/networking. Requires 4+ years, Go/Python/Java, distributed systems and microservices (Docker, Kubernetes, Kafka), REST/RPC/WebSockets, SQL/NoSQL, familiarity with ML integration patterns."
+    },
+    {
+      "title": "Senior Full Stack Engineer – (Java/React/Microservices) - *HYBRID*",
+      "company": "GEICO",
+      "location": "Palo Alto, CA",
+      "url": "https://to.indeed.com/aa2gdr6dgfvk",
+      "posted_at": "August 19, 2026",
+      "job_type": "Full-time",
+      "compensation": "$105,000 - $215,000 a year",
+      "description": "Insurance tech transformation — React frontend through Java/microservices backend, Kubernetes, PostgreSQL, Azure. Requires 4+ years React, 4+ years Java/C++/C#. Will sponsor. Hybrid."
+    },
+    {
+      "title": "Full-Stack Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "url": "https://to.indeed.com/aa4dnrgv94pr",
+      "posted_at": "July 30, 2026",
+      "job_type": "Full-time",
+      "compensation": "$139,000 - $257,550 a year",
+      "description": "Creative platform for design-intensive workflows — full-stack ownership from React frontend to backend services on Kubernetes. Explicitly wants AI-assisted engineering tool experience (Claude Code, Cursor, Codex) as part of daily workflow."
+    },
+    {
+      "title": "Senior, Software Engineer- Front End",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aayb49tpptj4",
+      "posted_at": "May 12, 2026",
+      "job_type": null,
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Checkout team — owns Walmart.com cart-to-order-placement experience. React, Next.js, GraphQL, TypeScript. 5+ years preferred, GenAI exploration encouraged."
+    },
+    {
+      "title": "Tools and Automations Lead, App Review",
+      "company": "Apple",
+      "location": "Cupertino, CA",
+      "url": "https://to.indeed.com/aa9b62mttkcr",
+      "posted_at": "July 05, 2026",
+      "job_type": null,
+      "compensation": "$149,200 - $249,000 a year",
+      "description": "WWDR App Review team — internal tooling/automation, GenAI/agentic solutions (LLMs, RAG, agents) for review workflows. Requires 7+ years combined software/data/solutions engineering, strong Python. Not a traditional \"software engineer\" title but surfaced by the search."
+    },
+    {
+      "title": "Senior Software Engineer- Front End",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aadgkbw966hp",
+      "posted_at": "May 20, 2026",
+      "job_type": "Full-time",
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Personalized digital experiences team (distinct from the Checkout team req at the same company/comp) — React, Redux, Next.js, NX, React Query, GraphQL SPA work. Requires 5+ years web development."
+    },
+    {
+      "title": "Senior, Software Engineer, Frontend / ReactJS / Node / GQL",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aafktvlv9dhq",
+      "posted_at": "May 20, 2026",
+      "job_type": null,
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "International Digital Experiences team — frontend JavaScript/React/Node/GraphQL/NextJS. No sponsorship. Requires 4+ years object-oriented design."
+    },
+    {
+      "title": "Principal, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa62r2vzx8sp",
+      "posted_at": "June 15, 2026",
+      "job_type": null,
+      "compensation": "$132,000 - $286,000 a year",
+      "description": "Marketplace Traffic Exposure platform — Principal/architect role, event-driven microservices, React/Redux frontend. Requires 10+ years distributed systems experience."
+    },
+    {
+      "title": "Senior Software Engineer- Backend",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aaskwmsqkh6t",
+      "posted_at": "May 20, 2026",
+      "job_type": "Full-time",
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Backend-focused role, transactional systems team — Java, Spring Boot, Cosmos DB/NoSQL. Requires 6+ years backend Java/Spring Boot experience."
+    },
+    {
+      "title": "Staff Software Engineer - Core Services",
+      "company": "AURORA",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aarpmftsxd6x",
+      "posted_at": "August 20, 2026",
+      "job_type": "Full-time",
+      "compensation": "$171,000 - $303,000 a year",
+      "description": "Self-driving vehicle tech — Core Services team, fleet/asset management backend on AWS, REST/gRPC/GraphQL. Requires 7+ years backend experience. Hybrid, 3 days/week in office."
+    },
+    {
+      "title": "(USA) Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa7xnp2rzd72",
+      "posted_at": "August 10, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "Walmart Business (B2B) group — purchasing/onboarding/marketing platforms. Python, Java, or TypeScript, generative AI/LLMs. Requires 8+ years delivering production-grade systems at scale."
+    },
+    {
+      "title": "Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aaklgrytqn7n",
+      "posted_at": "March 06, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "OneSource team — sourcing/product development platform. Java, Spring Boot, React, agentic technologies (LLMs, MCPs), PostgreSQL/Azure SQL. Requires 10+ years experience designing scalable distributed applications."
+    },
+    {
+      "title": "Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aamcwdmpq7cy",
+      "posted_at": "June 24, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "Search team — billions of queries across product catalogs, relevance/ranking/ML at scale. Java/JEE, Solr/Lucene/Elasticsearch, big data (Hive/Hadoop/Spark). Requires 6+ years building distributed Java applications."
+    },
+    {
+      "title": "Staff Software Engineer - Front End",
+      "company": "Intuit",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aapmckpxvsy4",
+      "posted_at": "August 19, 2026",
+      "job_type": null,
+      "compensation": "$202,500 - $274,000 a year",
+      "description": "Frontend leadership role — React/TypeScript, leads AI integration into products, mentors junior engineers. Requires 7+ years web/mobile development."
+    },
+    {
+      "title": "Staff Software Engineer, Back End",
+      "company": "Quicken Inc.",
+      "location": "Menlo Park, CA",
+      "url": "https://to.indeed.com/aac4pm6mjjy8",
+      "posted_at": "July 30, 2026",
+      "job_type": "Full-time",
+      "compensation": "$175,000 - $190,000 a year",
+      "description": "Quicken Cloud Services team — Java backend, AWS, microservices/REST, Hibernate/JPA. Requires 8+ years software engineering, 5+ years Java/Spring/AWS."
+    },
+    {
+      "title": "Senior Staff Software Engineer - UI, Go-To-Market (GTM)",
+      "company": "Palo Alto Networks",
+      "location": "Santa Clara, CA",
+      "url": "https://to.indeed.com/aazhql9sctll",
+      "posted_at": "August 10, 2026",
+      "job_type": "Full-time",
+      "compensation": "$145,000 - $235,500 a year",
+      "description": "CPQ (Configure Price Quote) platform UI lead — React/Vue/Angular, AI/LLM integration (prompt engineering, LLM security). Requires 10+ years experience (or equivalent). Onsite 3 days/week in Santa Clara. No sponsorship."
+    }
+  ]
+}
