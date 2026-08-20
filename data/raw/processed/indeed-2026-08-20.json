@@ -1,0 +1,111 @@
+{
+  "source": "indeed",
+  "fetched_at": "2026-08-20T00:00:00Z",
+  "search": {
+    "query": "Software Engineer",
+    "location": "San Jose, CA",
+    "country_code": "US"
+  },
+  "jobs": [
+    {
+      "title": "Staff Software Engineer",
+      "company": "PayPal",
+      "location": "San Jose, CA",
+      "url": "https://to.indeed.com/aaky68wbryyf",
+      "posted_at": "August 19, 2026",
+      "job_type": "Full-time",
+      "compensation": "$227,639 - $300,500 a year",
+      "description": "PayPal's payments engine team. Iios-focused staff role: 8+ years iOS development (Swift/Objective-C, Cocoa Touch, Xcode), mobile architecture patterns (MVVM/VIPER/Clean), CI/CD for mobile, RESTful API/SDK integration for payments. Hybrid, 3 days/week in office. Requires legal work authorization without sponsorship."
+    },
+    {
+      "title": "(USA) Senior, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aard26sccspg",
+      "posted_at": "August 20, 2026",
+      "job_type": null,
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Restaurant delivery platform team (Express delivery for Subway locations inside Walmart stores). Full lifecycle feature delivery, AI/ML integration, mentoring. Note: immigration sponsorship NOT available. Requires 3-5 years experience depending on degree."
+    },
+    {
+      "title": "(USA) Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aatbr8l7kz96",
+      "posted_at": "August 20, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "Same restaurant delivery platform team (Subway Express inside Walmart stores) as the Senior req, but Staff level: platform capability delivery, system design reviews, mentoring, AI/ML-driven automation. Note: immigration sponsorship NOT available. Requires 4-6 years experience depending on degree."
+    },
+    {
+      "title": "Software Engineer, Fullstack",
+      "company": "Glean Technologies",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aacs649f4p8r",
+      "posted_at": "May 22, 2026",
+      "job_type": null,
+      "compensation": "$140,000 - $265,000 a year",
+      "description": "Glean (Work AI / enterprise search platform) — own greenfield user-facing features end to end, REST APIs, React frontend, Go/Java/TypeScript. Hybrid, 3 days/week in San Francisco or Palo Alto office (not San Jose). Same req as seen in a prior pull, different job id/URL."
+    },
+    {
+      "title": "System Software Engineer",
+      "company": "Hewlett Packard Enterprise | HPE",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aamdzg98g9w4",
+      "posted_at": "April 06, 2026",
+      "job_type": "Full-time",
+      "compensation": "$120,500 - $243,000 a year",
+      "description": "Onsite role. Systems software design for distributed systems/OS/networking. Requires 4+ years, Go/Python/Java, distributed systems and microservices (Docker, Kubernetes, Kafka), REST/RPC/WebSockets, SQL/NoSQL, familiarity with ML integration patterns."
+    },
+    {
+      "title": "(USA) Senior, Software Engineer - Full Stack",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aafs6qfvjlxr",
+      "posted_at": "August 19, 2026",
+      "job_type": "Full-time",
+      "compensation": "$117,000 - $234,000 a year",
+      "description": "Backbone Engineering team — Java, React, NextJS, Kubernetes. Full-time, onsite in Sunnyvale, not eligible for remote. Note: immigration sponsorship NOT available. Requires 3-5 years experience depending on degree."
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Uber",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aadqn8gxpc74",
+      "posted_at": "August 19, 2026",
+      "job_type": "Full-time",
+      "compensation": "$264,514 - $317,417 a year",
+      "description": "Data and Storage teams — distributed storage platforms and high-performance data pipelines at scale. Requires Master's + 5 years (or equivalent), C++/Python/Java/Golang/Node.js, SQL/MySQL, distributed systems, system design. At least 50% in-office."
+    },
+    {
+      "title": "Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aaz7cypkrffk",
+      "posted_at": "March 06, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "OneSource team — sourcing/product development platform. Java, Spring Boot, React, agentic tech (LLMs, MCPs), PostgreSQL/Azure SQL. Requires 10+ years experience designing scalable distributed applications."
+    },
+    {
+      "title": "Full-Stack Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "url": "https://to.indeed.com/aadd6kk97p7h",
+      "posted_at": "July 30, 2026",
+      "job_type": "Full-time",
+      "compensation": "$139,000 - $257,550 a year",
+      "description": "Creative platform for design-intensive workflows — full-stack ownership from React frontend to backend services on Kubernetes. Explicitly wants AI-assisted engineering tool experience (Claude Code, Cursor, Codex) as part of daily workflow."
+    },
+    {
+      "title": "Software Engineer II- GraphQL Platform",
+      "company": "Wayfair",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aawmbjzrnspm",
+      "posted_at": "August 05, 2026",
+      "job_type": "Full-time",
+      "compensation": "$165,000 - $181,500 a year",
+      "description": "GraphQL Platform team — federated GraphQL infrastructure/tooling for thousands of internal engineers. Hybrid, in-office Tue-Thu in Mountain View. Requires 2+ years distributed services experience, Java/TypeScript/Rust/JS, Kubernetes/Docker curiosity. Same req as seen in a prior pull, different job id/URL."
+    }
+  ]
+}
