@@ -11,12 +11,20 @@ mechanism for it) — for now, a dealbreaker means score `fit_score` at 1, the m
 and say so explicitly in `reasoning` (e.g. "Dealbreaker: ..."). It will still appear in
 the digest, just at the bottom, until real filtering exists.
 
-- If there is no mention of JavaScript or TypeScript, but there ARE references to
-  Java, Go or Python in the description: dealbreaker.
+- If there is no mention of JavaScript, TypeScript, or a JS/TS framework (React,
+  Vue, Angular, Node.js, Next.js, etc.), but there ARE references to Java, Go or
+  Python in the description: dealbreaker.
 
 ## Nice-to-haves
 
 None yet.
+
+## Soft negatives
+
+Not dealbreakers — each one just nudges `fit_score` down by 1 (see Scoring guidance),
+and should still be mentioned in `reasoning` when it applies.
+
+- Mentions PowerShell scripting as a requirement.
 
 ## Categories
 
@@ -32,9 +40,12 @@ description. If none fit well, use `other`.
 ## Scoring guidance
 
 If a dealbreaker above applies, score `fit_score` at 1 regardless of anything else,
-and say why in `reasoning`. Otherwise, score `fit_score` from 1-10 based on how clear
-and substantive the listing itself is — there are no must-haves or nice-to-haves yet,
-so this just gives the digest something real to sort by instead of a constant value.
+and say why in `reasoning`. Otherwise, start from a baseline of how clear and
+substantive the listing itself is (1-10) — there are no must-haves or nice-to-haves
+yet, so that baseline just gives the digest something real to sort by instead of a
+constant value — then subtract 1 for each soft negative above that applies, not going
+below 2 (soft negatives should never fully match a real dealbreaker's floor of 1).
 Write 1-2 sentences of `reasoning` noting anything a human would want to know at a
-glance (compensation, location, notable requirements, anything unusual). Add 1-3 short
-`tags` (e.g. relevant tech stack keywords) when they're obvious from the listing.
+glance (compensation, location, notable requirements, anything unusual, any soft
+negative that applied). Add 1-3 short `tags` (e.g. relevant tech stack keywords) when
+they're obvious from the listing.
