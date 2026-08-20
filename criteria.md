@@ -1,20 +1,18 @@
 # Job Scoring Criteria
 
-**Status: placeholder.** This is a deliberately permissive first pass, meant to
-validate the ingest → score → digest → feedback loop end-to-end before
-investing time in real criteria. Nothing below should cause a job to be
-excluded or scored down — there are no must-haves or dealbreakers yet, only
-enough structure for `score.js` to produce a real category and a real
-sentence of reasoning per job. Revisit this file once a few digest cycles
-have produced actual feedback to react to.
-
 ## Must-haves
 
 None yet. Do not disqualify a job for missing anything.
 
 ## Dealbreakers
 
-None yet. Do not downrank a job for anything you find here.
+Full exclusion from the digest isn't wired up yet (score.js/digest.js have no
+mechanism for it) — for now, a dealbreaker means score `fit_score` at 1, the minimum,
+and say so explicitly in `reasoning` (e.g. "Dealbreaker: ..."). It will still appear in
+the digest, just at the bottom, until real filtering exists.
+
+- If there is no mention of JavaScript or TypeScript, but there ARE references to
+  Java, Go or Python in the description: dealbreaker.
 
 ## Nice-to-haves
 
@@ -33,10 +31,10 @@ description. If none fit well, use `other`.
 
 ## Scoring guidance
 
-Score `fit_score` from 1-10 based only on how clear and substantive the
-listing itself is (not on fit to any personal criteria, since none exist
-yet) — this just gives the digest something real to sort by instead of a
-constant value. Write 1-2 sentences of `reasoning` noting anything a human
-would want to know at a glance (compensation, location, notable
-requirements, anything unusual). Add 1-3 short `tags` (e.g. relevant tech
-stack keywords) when they're obvious from the listing.
+If a dealbreaker above applies, score `fit_score` at 1 regardless of anything else,
+and say why in `reasoning`. Otherwise, score `fit_score` from 1-10 based on how clear
+and substantive the listing itself is — there are no must-haves or nice-to-haves yet,
+so this just gives the digest something real to sort by instead of a constant value.
+Write 1-2 sentences of `reasoning` noting anything a human would want to know at a
+glance (compensation, location, notable requirements, anything unusual). Add 1-3 short
+`tags` (e.g. relevant tech stack keywords) when they're obvious from the listing.
