@@ -32,14 +32,14 @@ function formatJob(job) {
 // this just guards against a first sentence that runs long.
 function terseReason(reasoning) {
   if (!reasoning) return '';
-  const firstSentence = (reasoning.match(/^[^.!?]*[.!?]?/)?.[0] ?? reasoning).trim();
+  const firstSentence = (reasoning.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? reasoning).trim();
   const MAX = 90;
   if (firstSentence.length <= MAX) return firstSentence;
   return `${firstSentence.slice(0, MAX).replace(/\s+\S*$/, '')}…`;
 }
 
 function formatAppendixJob(job) {
-  return `- [${job.title}](${job.url}) @ ${job.company} — ${terseReason(job.reasoning)}`;
+  return `- #${job.id} — [${job.title}](${job.url}) @ ${job.company} — ${terseReason(job.reasoning)}`;
 }
 
 function buildBody(jobsByCategory, appendixJobs) {
