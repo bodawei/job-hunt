@@ -27,10 +27,28 @@ function formatJob(job) {
   return lines.join('\n');
 }
 
-function buildBody(jobsByCategory) {
+// Dealbreaker reasoning (per criteria.md) leads with "Dealbreaker: ..." as its own
+// sentence, so the first sentence alone is normally the whole explanation already —
+// this just guards against a first sentence that runs long.
+function terseReason(reasoning) {
+  if (!reasoning) return '';
+  const firstSentence = (reasoning.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? reasoning).trim();
+  const MAX = 90;
+  if (firstSentence.length <= MAX) return firstSentence;
+  return `${firstSentence.slice(0, MAX).replace(/\s+\S*$/, '')}…`;
+}
+
+function formatAppendixJob(job) {
+  return `- #${job.id} — [${job.title}](${job.url}) @ ${job.company} — ${terseReason(job.reasoning)}`;
+}
+
+function buildBody(jobsByCategory, appendixJobs) {
   const sections = [];
   for (const [category, jobs] of jobsByCategory) {
     sections.push(`## ${category} (${jobs.length})`, '', ...jobs.map(formatJob));
+  }
+  if (appendixJobs.length > 0) {
+    sections.push(`## Fit score: 1/10 (${appendixJobs.length})`, '', ...appendixJobs.map(formatAppendixJob), '');
   }
   return sections.join('\n');
 }
@@ -51,15 +69,18 @@ async function main() {
     return;
   }
 
+  const appendixJobs = jobs.filter((job) => job.fit_score === 1);
+  const mainJobs = jobs.filter((job) => job.fit_score !== 1);
+
   const jobsByCategory = new Map();
-  for (const job of jobs) {
+  for (const job of mainJobs) {
     if (!jobsByCategory.has(job.category)) jobsByCategory.set(job.category, []);
     jobsByCategory.get(job.category).push(job);
   }
 
   const today = new Date().toISOString().slice(0, 10);
   const title = `Job Digest — ${today}`;
-  const body = buildBody(jobsByCategory);
+  const body = buildBody(jobsByCategory, appendixJobs);
 
   ensureLabel();
 

@@ -66,3 +66,36 @@ reason this matches my skill set very well, especially the mentoring angle
 A block needs both a `job <id>` line and a `reason` line to be recorded — anything else
 is treated as ordinary discussion, not feedback.
 
+## Debugging
+
+`npm run dump` prints every row of `jobs` and `feedback` as a table (long text columns
+truncated) — the quickest way to eyeball what's actually in `data/jobs.db`.
+
+For anything `dump` doesn't cover, `sqlite3` is already on macOS — no install needed:
+
+```bash
+sqlite3 data/jobs.db
+```
+
+Drops you into an interactive prompt against the real file — changes take effect
+immediately, no separate save step, and it's the exact same file the npm scripts read.
+A couple of things worth knowing once you're in:
+
+```sql
+.headers on
+.mode column
+```
+
+Neither changes any data — they just make `SELECT` output readable: `.headers on` adds
+a header row with column names, `.mode column` aligns values into padded columns
+instead of sqlite3's default `value|value|value` dump.
+
+To list the tables:
+
+```sql
+SELECT name FROM sqlite_master WHERE type='table';
+```
+
+(or the `.tables` shortcut, which does the same thing without being real SQL). `.quit`
+exits back to your shell.
+
