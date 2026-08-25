@@ -13,7 +13,11 @@ function dumpTable(db, table) {
   if (rows.length === 0) {
     return;
   }
-  console.table(rows.map((row) => Object.fromEntries(Object.entries(row).map(([k, v]) => [k, truncate(v)]))));
+  console.table(
+    rows.map((row) =>
+      Object.fromEntries(Object.entries(row).map(([k, v]) => [k, truncate(v)])),
+    ),
+  );
 }
 
 function main() {

@@ -1,4 +1,10 @@
-import { readdirSync, readFileSync, renameSync, mkdirSync, existsSync } from 'node:fs';
+import {
+  readdirSync,
+  readFileSync,
+  renameSync,
+  mkdirSync,
+  existsSync,
+} from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -55,7 +61,7 @@ async function main() {
         contentHash(job),
         job.posted_at ?? null,
         job.job_type ?? null,
-        job.compensation ?? null
+        job.compensation ?? null,
       );
     }
     renameSync(filePath, path.join(PROCESSED_DIR, file));

@@ -7,8 +7,17 @@ function ensureLabel() {
   try {
     execFileSync(
       'gh',
-      ['label', 'create', LABEL, '--color', '0E8A16', '--description', 'Daily job digest issue', '--force'],
-      { stdio: 'pipe' }
+      [
+        'label',
+        'create',
+        LABEL,
+        '--color',
+        '0E8A16',
+        '--description',
+        'Daily job digest issue',
+        '--force',
+      ],
+      { stdio: 'pipe' },
     );
   } catch {
     // best-effort — if it already exists (or gh lacks perms locally), issue
@@ -36,7 +45,9 @@ function terseReason(reasoning) {
   if (!reasoning) {
     return '';
   }
-  const firstSentence = (reasoning.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? reasoning).trim();
+  const firstSentence = (
+    reasoning.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? reasoning
+  ).trim();
   const MAX = 90;
   if (firstSentence.length <= MAX) {
     return firstSentence;
@@ -55,13 +66,27 @@ function formatFailure(failure) {
 function buildBody(jobsByCategory, appendixJobs, failures) {
   const sections = [];
   for (const [category, jobs] of jobsByCategory) {
-    sections.push(`## ${category} (${jobs.length})`, '', ...jobs.map(formatJob));
+    sections.push(
+      `## ${category} (${jobs.length})`,
+      '',
+      ...jobs.map(formatJob),
+    );
   }
   if (appendixJobs.length > 0) {
-    sections.push(`## Fit score: 1/10 (${appendixJobs.length})`, '', ...appendixJobs.map(formatAppendixJob), '');
+    sections.push(
+      `## Fit score: 1/10 (${appendixJobs.length})`,
+      '',
+      ...appendixJobs.map(formatAppendixJob),
+      '',
+    );
   }
   if (failures.length > 0) {
-    sections.push(`## Fetch failures (${failures.length})`, '', ...failures.map(formatFailure), '');
+    sections.push(
+      `## Fetch failures (${failures.length})`,
+      '',
+      ...failures.map(formatFailure),
+      '',
+    );
   }
   return sections.join('\n');
 }
@@ -72,14 +97,16 @@ async function main() {
     .prepare(
       `SELECT * FROM jobs
        WHERE scored_at IS NOT NULL AND digest_issue_number IS NULL
-       ORDER BY category, fit_score DESC`
+       ORDER BY category, fit_score DESC`,
     )
     .all();
 
   // Fetch failures not yet reported in any digest. A run that fetched nothing because a
   // board errored is exactly when the issue must appear, so these can carry a digest alone.
   const failures = db
-    .prepare('SELECT * FROM ingest_failures WHERE digest_issue_number IS NULL ORDER BY id')
+    .prepare(
+      'SELECT * FROM ingest_failures WHERE digest_issue_number IS NULL ORDER BY id',
+    )
     .all();
 
   if (jobs.length === 0 && failures.length === 0) {
@@ -105,27 +132,35 @@ async function main() {
 
   ensureLabel();
 
-  const output = execFileSync('gh', ['issue', 'create', '--title', title, '--body', body, '--label', LABEL], {
-    encoding: 'utf8',
-  });
+  const output = execFileSync(
+    'gh',
+    ['issue', 'create', '--title', title, '--body', body, '--label', LABEL],
+    {
+      encoding: 'utf8',
+    },
+  );
 
   const url = output.trim().split('\n').pop();
   const issueNumber = Number(url.split('/').pop());
 
-  const update = db.prepare('UPDATE jobs SET digest_issue_number = ? WHERE id = ?');
+  const update = db.prepare(
+    'UPDATE jobs SET digest_issue_number = ? WHERE id = ?',
+  );
   for (const job of jobs) {
     update.run(issueNumber, job.id);
   }
 
   // Stamp reported failures so they're never posted in a later digest.
-  const stampFailure = db.prepare('UPDATE ingest_failures SET digest_issue_number = ? WHERE id = ?');
+  const stampFailure = db.prepare(
+    'UPDATE ingest_failures SET digest_issue_number = ? WHERE id = ?',
+  );
   for (const failure of failures) {
     stampFailure.run(issueNumber, failure.id);
   }
 
   console.log(
     `Posted digest issue #${issueNumber} with ${jobs.length} jobs` +
-      `${failures.length > 0 ? ` and ${failures.length} fetch failures` : ''}: ${url}`
+      `${failures.length > 0 ? ` and ${failures.length} fetch failures` : ''}: ${url}`,
   );
   db.close();
 }

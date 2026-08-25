@@ -66,10 +66,15 @@ async function ingestTarget(target) {
   const base = `${API}/${target.board_token}`;
 
   const deptData = await fetchJson(`${base}/departments`);
-  const { allowed, missing } = resolveDeptIds(deptData.departments ?? [], target.departments);
+  const { allowed, missing } = resolveDeptIds(
+    deptData.departments ?? [],
+    target.departments,
+  );
   if (missing.length > 0) {
     const label = missing.map((m) => `'${m}'`).join(', ');
-    throw new Error(`department${missing.length > 1 ? 's' : ''} ${label} not found`);
+    throw new Error(
+      `department${missing.length > 1 ? 's' : ''} ${label} not found`,
+    );
   }
 
   const jobData = await fetchJson(`${base}/jobs?content=true`);
@@ -81,7 +86,8 @@ async function ingestTarget(target) {
 
   const matched = allJobs.filter(
     (job) =>
-      (job.departments ?? []).some((d) => allowed.has(d.id)) && matchesLocation(job, target.locations)
+      (job.departments ?? []).some((d) => allowed.has(d.id)) &&
+      matchesLocation(job, target.locations),
   );
 
   const jobs = matched.map((job) => ({
@@ -104,7 +110,7 @@ async function main() {
 
   const db = openDb();
   const recordFailure = db.prepare(
-    'INSERT INTO ingest_failures (company, board_token, reason) VALUES (?, ?, ?)'
+    'INSERT INTO ingest_failures (company, board_token, reason) VALUES (?, ?, ?)',
   );
 
   const today = new Date().toISOString().slice(0, 10);
@@ -116,10 +122,16 @@ async function main() {
       const file = path.join(RAW_DIR, `${target.name}-${today}.json`);
       writeFileSync(
         file,
-        JSON.stringify({ source: SOURCE, fetched_at: new Date().toISOString(), jobs }, null, 2)
+        JSON.stringify(
+          { source: SOURCE, fetched_at: new Date().toISOString(), jobs },
+          null,
+          2,
+        ),
       );
       const rel = path.relative(ROOT, file);
-      console.log(`${target.name}: ${jobs.length} matching roles (${total} total on board) -> ${rel}`);
+      console.log(
+        `${target.name}: ${jobs.length} matching roles (${total} total on board) -> ${rel}`,
+      );
     } catch (err) {
       failures++;
       const reason = err.message;

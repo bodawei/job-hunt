@@ -12,9 +12,19 @@
     "3score-jobs": "node scripts/score.js",
     "4post-issue": "node scripts/digest.js",
     "6learn-from-issue-comments": "node scripts/parse-feedback.js",
-    "dump": "node scripts/dump.js"
+    "dump": "node scripts/dump.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.9.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6"
   }
 }

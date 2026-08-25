@@ -1,6 +1,6 @@
 # Code style
 
-- If, while and so on must always enclose their bodies in {}'s.  (No "if true then console.log()" kinds of things)
+- If, while and so on must always enclose their bodies in {}'s. (No "if true then console.log()" kinds of things)
 - Only add comments when the code in question is not obvious.
 
 # Job Search Automation — Project Context
@@ -38,7 +38,7 @@ actually improves the criteria over time (not just thumbs up/down).
 - **Criteria revision**: Deliberately NOT automated end-to-end. Periodically (e.g.
   weekly), review recent `feedback` rows against `criteria.md` in a conversation
   (Claude Code or Cowork) — Claude proposes a diff, the user reviews/edits and commits
-  it normally. This keeps a readable git history of *why* the criteria changed.
+  it normally. This keeps a readable git history of _why_ the criteria changed.
 
 ## Repo layout
 
@@ -73,11 +73,11 @@ actually improves the criteria over time (not just thumbs up/down).
 
 - **Criteria as a living document**, never hardcoded scoring logic. `criteria.md` is
   read fresh by `score.js` on every run.
-- **Structured feedback, not binary reactions** — the *reason* for a correction is
+- **Structured feedback, not binary reactions** — the _reason_ for a correction is
   what makes criteria revision possible. A thumbs-down alone can't distinguish "the
   model misjudged this one" from "the criteria doc is missing a rule."
 - **Retrieval-based few-shot for scoring**, not a static example set — embed the new
-  job, pull the most *similar* labeled past examples, not a fixed sample. Keeps the
+  job, pull the most _similar_ labeled past examples, not a fixed sample. Keeps the
   scoring prompt lean and relevant as the feedback table grows past ~100 rows.
 - **Human-in-the-loop for criteria edits** — this is intentional friction. The
   criteria-revision step should stay a conversation, not a fully automated rewrite.
@@ -108,8 +108,7 @@ actually improves the criteria over time (not just thumbs up/down).
   limiting.
 - Hosted digest page or email delivery — only if GitHub Issues becomes limiting.
 
-
-
 ## Note to self
+
 - One thing worth knowing: CLAUDE.md files are meant to stay fairly lean — some teams keep theirs under a couple hundred lines since Claude Code re-reads it constantly. This one's a reasonable size for a project kickoff; once the scripts exist, you can trim the "not yet built" section down as things get checked off.
-- 
+-

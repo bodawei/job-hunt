@@ -10,7 +10,8 @@ const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
 
 const SCORE_TOOL = {
   name: 'score_job',
-  description: 'Record the category, fit score, reasoning, and tags for a job listing.',
+  description:
+    'Record the category, fit score, reasoning, and tags for a job listing.',
   input_schema: {
     type: 'object',
     properties: {
@@ -50,7 +51,9 @@ async function main() {
   const criteria = readFileSync(CRITERIA_PATH, 'utf8');
   const client = new Anthropic();
 
-  const unscored = db.prepare('SELECT * FROM jobs WHERE scored_at IS NULL').all();
+  const unscored = db
+    .prepare('SELECT * FROM jobs WHERE scored_at IS NULL')
+    .all();
   if (unscored.length === 0) {
     console.log('No unscored jobs.');
     db.close();
@@ -64,8 +67,16 @@ async function main() {
 
   for (const job of unscored) {
     const result = await scoreJob(client, criteria, job);
-    update.run(result.category, result.fit_score, result.reasoning, JSON.stringify(result.tags ?? []), job.id);
-    console.log(`Scored #${job.id} ${job.company} — ${job.title}: ${result.category} (${result.fit_score})`);
+    update.run(
+      result.category,
+      result.fit_score,
+      result.reasoning,
+      JSON.stringify(result.tags ?? []),
+      job.id,
+    );
+    console.log(
+      `Scored #${job.id} ${job.company} — ${job.title}: ${result.category} (${result.fit_score})`,
+    );
   }
 
   db.close();
