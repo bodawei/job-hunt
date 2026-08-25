@@ -22,15 +22,32 @@ fire accidentally); only argument becomes an optional override-file path.
 
 **1. New `search-targets.json`** (repo root) — JSON array of named targets, seeded
 with the 3 variants tested today:
+
 ```json
 [
-  { "name": "swe-san-jose", "search": "Software Engineer", "location": "San Jose, CA", "country_code": "US" },
-  { "name": "senior-swe-san-jose", "search": "Senior Software Engineer", "location": "San Jose, CA", "country_code": "US" },
-  { "name": "staff-swe-san-jose", "search": "Staff Software Engineer", "location": "San Jose, CA", "country_code": "US" }
+  {
+    "name": "swe-san-jose",
+    "search": "Software Engineer",
+    "location": "San Jose, CA",
+    "country_code": "US"
+  },
+  {
+    "name": "senior-swe-san-jose",
+    "search": "Senior Software Engineer",
+    "location": "San Jose, CA",
+    "country_code": "US"
+  },
+  {
+    "name": "staff-swe-san-jose",
+    "search": "Staff Software Engineer",
+    "location": "San Jose, CA",
+    "country_code": "US"
+  }
 ]
 ```
 
 **2. Rewrite `.claude/commands/ingest-indeed.md`**:
+
 - `$ARGUMENTS` = path to alternate config file if given, else `search-targets.json`.
   Error and stop if missing/invalid.
 - `search_jobs` once per target.
@@ -42,6 +59,7 @@ with the 3 variants tested today:
 
 **3. Schema**: add `job_type`, `compensation` columns (currently accepted in raw
 dumps, silently dropped).
+
 - `data/schema.sql`: `ALTER TABLE jobs ADD COLUMN IF NOT EXISTS job_type TEXT;` /
   `...compensation TEXT;` — migrates the existing committed db automatically via
   `openDb()`.
@@ -51,6 +69,7 @@ dumps, silently dropped).
 (fresh per search call, even for the same posting). When description is missing, fall
 back to the same weaker signal the in-run pre-dedupe already trusts
 (`company+title+location+posted_at+compensation`) instead:
+
 ```js
 function normalizeText(text) {
   return text.trim().replace(/\s+/g, ' ');
@@ -62,6 +81,7 @@ function contentHash(job) {
   return createHash('sha256').update(identity).digest('hex');
 }
 ```
+
 Only affects new inserts — existing rows keep their current hash.
 
 **5. Docs**: `data/raw/SCHEMA.md` (dedup key, new columns, new `/ingest-indeed`

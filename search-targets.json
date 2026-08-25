@@ -1,5 +1,20 @@
 [
-  { "name": "swe-san-jose", "search": "Software Engineer", "location": "San Jose, CA", "country_code": "US" },
-  { "name": "senior-swe-san-jose", "search": "Senior Software Engineer", "location": "San Jose, CA", "country_code": "US" },
-  { "name": "staff-swe-san-jose", "search": "Staff Software Engineer", "location": "San Jose, CA", "country_code": "US" }
+  {
+    "name": "swe-san-jose",
+    "search": "Software Engineer",
+    "location": "San Jose, CA",
+    "country_code": "US"
+  },
+  {
+    "name": "senior-swe-san-jose",
+    "search": "Senior Software Engineer",
+    "location": "San Jose, CA",
+    "country_code": "US"
+  },
+  {
+    "name": "staff-swe-san-jose",
+    "search": "Staff Software Engineer",
+    "location": "San Jose, CA",
+    "country_code": "US"
+  }
 ]

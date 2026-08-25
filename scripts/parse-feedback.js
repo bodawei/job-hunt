@@ -5,16 +5,24 @@ function repoSlug() {
   if (process.env.GITHUB_REPOSITORY) {
     return process.env.GITHUB_REPOSITORY;
   }
-  return execFileSync('gh', ['repo', 'view', '--json', 'nameWithOwner', '-q', '.nameWithOwner'], {
-    encoding: 'utf8',
-  }).trim();
+  return execFileSync(
+    'gh',
+    ['repo', 'view', '--json', 'nameWithOwner', '-q', '.nameWithOwner'],
+    {
+      encoding: 'utf8',
+    },
+  ).trim();
 }
 
 function fetchCommentBody(commentId) {
   const repo = repoSlug();
-  return execFileSync('gh', ['api', `repos/${repo}/issues/comments/${commentId}`, '--jq', '.body'], {
-    encoding: 'utf8',
-  });
+  return execFileSync(
+    'gh',
+    ['api', `repos/${repo}/issues/comments/${commentId}`, '--jq', '.body'],
+    {
+      encoding: 'utf8',
+    },
+  );
 }
 
 const JOB_LINE = /^\s*job\s*:?\s*(\d+)\s*$/i;
@@ -55,7 +63,9 @@ async function main() {
   const blocks = parseFeedback(body);
 
   if (blocks.length === 0) {
-    console.log('Comment has no structured feedback ("job <id>" + "reason" pair) — skipping.');
+    console.log(
+      'Comment has no structured feedback ("job <id>" + "reason" pair) — skipping.',
+    );
     return;
   }
 
@@ -63,7 +73,7 @@ async function main() {
   const getJob = db.prepare('SELECT id FROM jobs WHERE id = ?');
   const insert = db.prepare(
     `INSERT INTO feedback (job_id, corrected_category, corrected_score_direction, reason, github_comment_id)
-     VALUES (?, ?, ?, ?, ?)`
+     VALUES (?, ?, ?, ?, ?)`,
   );
 
   for (const block of blocks) {
@@ -71,8 +81,16 @@ async function main() {
       console.log(`No job with id ${block.jobId} — skipping that block.`);
       continue;
     }
-    insert.run(block.jobId, block.category ?? null, block.score ?? null, block.reason, Number(commentId));
-    console.log(`Recorded feedback on job #${block.jobId} from comment ${commentId}.`);
+    insert.run(
+      block.jobId,
+      block.category ?? null,
+      block.score ?? null,
+      block.reason,
+      Number(commentId),
+    );
+    console.log(
+      `Recorded feedback on job #${block.jobId} from comment ${commentId}.`,
+    );
   }
 
   db.close();

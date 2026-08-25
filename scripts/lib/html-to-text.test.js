@@ -15,12 +15,15 @@ test('strips tags and keeps text', () => {
 test('decodes common named and numeric entities', () => {
   assert.equal(
     htmlToText('Tom&amp;Jerry &#39;s &quot;quote&quot; a&nbsp;b &#x27;x&#x27;'),
-    `Tom&Jerry 's "quote" a b 'x'`
+    `Tom&Jerry 's "quote" a b 'x'`,
   );
 });
 
 test('strips entity-escaped HTML tags (Greenhouse content shape)', () => {
-  assert.equal(htmlToText('&lt;p&gt;Hi &lt;b&gt;there&lt;/b&gt;&lt;/p&gt;'), 'Hi there');
+  assert.equal(
+    htmlToText('&lt;p&gt;Hi &lt;b&gt;there&lt;/b&gt;&lt;/p&gt;'),
+    'Hi there',
+  );
 });
 
 test('decodes doubly-escaped text entities', () => {
@@ -33,10 +36,7 @@ test('turns list items into bullets on their own lines', () => {
 });
 
 test('collapses whitespace and blank-line runs', () => {
-  assert.equal(
-    htmlToText('<p>a   b</p>\n\n\n<p>c</p>'),
-    'a b\n\nc'
-  );
+  assert.equal(htmlToText('<p>a   b</p>\n\n\n<p>c</p>'), 'a b\n\nc');
 });
 
 test('is idempotent on realistic content', () => {
@@ -53,5 +53,8 @@ test('is deterministic across calls', () => {
 });
 
 test('plain text (Indeed-style) passes through unchanged aside from whitespace', () => {
-  assert.equal(htmlToText('Senior Software Engineer, full-time.'), 'Senior Software Engineer, full-time.');
+  assert.equal(
+    htmlToText('Senior Software Engineer, full-time.'),
+    'Senior Software Engineer, full-time.',
+  );
 });

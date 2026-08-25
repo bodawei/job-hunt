@@ -1,4 +1,5 @@
 # job-hunt
+
 Explore using an LLM to help me retrieve/scrape relevant info about job availability so I don't have to be manually searching across tons of sites.
 
 ## Pipeline
@@ -17,7 +18,12 @@ listed there, merging all the results into one raw dump. Edit that file to chang
 gets searched; no need to touch the command itself. Each entry:
 
 ```json
-{ "name": "swe-san-jose", "search": "Software Engineer", "location": "San Jose, CA", "country_code": "US" }
+{
+  "name": "swe-san-jose",
+  "search": "Software Engineer",
+  "location": "San Jose, CA",
+  "country_code": "US"
+}
 ```
 
 `name` is just a label shown in the run summary. `search`, `location`, and
@@ -37,7 +43,12 @@ boards — no scraping, no API key. It reads [greenhouse-targets.json](greenhous
 one entry per company:
 
 ```json
-{ "name": "harness", "board_token": "harnessinc", "departments": ["Engineering"], "locations": ["Mountain View", "San Francisco"] }
+{
+  "name": "harness",
+  "board_token": "harnessinc",
+  "departments": ["Engineering"],
+  "locations": ["Mountain View", "San Francisco"]
+}
 ```
 
 - `name` — a label; also the raw filename prefix.
@@ -127,4 +138,3 @@ SELECT name FROM sqlite_master WHERE type='table';
 
 (or the `.tables` shortcut, which does the same thing without being real SQL). `.quit`
 exits back to your shell.
-

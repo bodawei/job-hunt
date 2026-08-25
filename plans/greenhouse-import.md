@@ -1,6 +1,7 @@
 # Plan: Greenhouse ingestion source
 
 ## Context
+
 `scripts/ingest.js` is a stub; the only working ingestion today is the manual Indeed path.
 This adds a Greenhouse ingester that pulls jobs from public Greenhouse job boards (starting
 with Harness, board token `harnessinc`) into the existing pipeline. Greenhouse boards expose
@@ -14,14 +15,20 @@ It writes to the same seam every source uses: one `data/raw/<company>-<date>.jso
 digest step (a separate stage) can report them in the daily GitHub issue.
 
 ## Config: `greenhouse-targets.json` (new)
+
 Mirrors `search-targets.json`. One entry per company:
+
 ```json
 [
-  { "name": "harness", "board_token": "harnessinc",
+  {
+    "name": "harness",
+    "board_token": "harnessinc",
     "departments": ["Engineering"],
-    "locations": ["Mountain View", "San Francisco"] }
+    "locations": ["Mountain View", "San Francisco"]
+  }
 ]
 ```
+
 - `departments` — top-level Greenhouse department names, resolved at runtime to their full
   descendant-id subtree (the site's "Engineering" is a parent over Software Development,
   Cloud Engineering & DevOps, Data, Eng Ops; excludes Sales Eng, Product Mgmt, Impl Eng).
@@ -30,6 +37,7 @@ Mirrors `search-targets.json`. One entry per company:
 ## Shared helpers (new, in `scripts/lib/`, dependency-free)
 
 **`fetch-json.js`** — wrapper over global `fetch` for resilient JSON GETs:
+
 - `AbortSignal.timeout(~10s)` per request.
 - 1–2 retries with small backoff on network error or 5xx; no retry on 4xx (deterministic).
 - Throws a typed error (status + url) on `!res.ok`.
@@ -43,10 +51,12 @@ deterministic and idempotent — shipped with a `node --test` file
 entities, nested tags, lists, and idempotency.
 
 ## `scripts/ingest.js` (implement the stub; `npm run 1ingest-jobs`)
+
 Read `greenhouse-targets.json` and process **each company independently** in its own
 try/catch — one company's failure never aborts the others.
 
 For each company:
+
 1. `GET /v1/boards/<token>/departments` (via `fetch-json`).
 2. Resolve each requested department name → its id + all descendant ids. If a requested
    name matches no department, fail this company with reason `department '<name>' not found`.
@@ -58,10 +68,10 @@ For each company:
    just didn't match — e.g. SF has no eng roles today) is legitimate: write the file with
    `jobs: []` and report `"0 matching roles (N total on board)"`.
 5. Map each kept job → `{ company, title, url (strip Greenhouse per-view gh_jid / tracking
-   params), description: htmlToText(content), location: location.name, posted_at:
-   first_published, job_type: null, compensation: null }`.
+params), description: htmlToText(content), location: location.name, posted_at:
+first_published, job_type: null, compensation: null }`.
 6. Write `data/raw/<company-name>-<date>.json` = `{ source: "greenhouse", fetched_at,
-   jobs }`. Date is **UTC** (Actions run UTC).
+jobs }`. Date is **UTC** (Actions run UTC).
 
 A non-`ok` response from step 1 or 3 surfaces as the `fetch-json` error → caught with reason
 `HTTP <status> from <url>` (network/timeout after retries → `network error: <message>`),
@@ -73,14 +83,17 @@ created_at }` — the `digest_issue_number` NULL/not-null pattern mirrors the `j
 each failure is reported in exactly one digest.
 
 At end of run:
+
 - Print a per-company summary: total on board, matched, file written — or the failure line.
 - If **any** company failed, set `process.exitCode = 1` so the daily Action flags it;
   companies that succeeded still have their files written and their failures recorded.
 - No normalize, no commit — `npm run 2normalize-jobs` loads the raw files separately.
 
 ## `data/schema.sql`
+
 Add one table (plain `CREATE TABLE IF NOT EXISTS`, so `openDb()` creates it with no
 migration):
+
 ```sql
 CREATE TABLE IF NOT EXISTS ingest_failures (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -93,8 +106,10 @@ CREATE TABLE IF NOT EXISTS ingest_failures (
 ```
 
 ## `scripts/digest.js`
+
 Report unreported fetch failures in the same issue, **below the `Fit score: 1/10`
 appendix**:
+
 - Query `SELECT * FROM ingest_failures WHERE digest_issue_number IS NULL`.
 - If there are failures, append a final `## Fetch failures (N)` section — one bullet per
   row: `- **<company>** — <reason>`.
@@ -107,21 +122,25 @@ appendix**:
   Only skip when both are empty.
 
 ## `normalize.js`
+
 No change. Descriptions arrive as plain text, so the existing `contentHash` / INSERT path
 handles Greenhouse rows exactly like Indeed rows.
 
 ## `README.md`
+
 Document `greenhouse-targets.json`, the `source: "greenhouse"` per-company-file convention,
 the UTC date, the `1ingest-jobs → 2normalize-jobs` path, the exit-non-zero-on-partial-
 failure behavior, and that fetch failures surface in the digest issue's `Fetch failures`
 section.
 
 ## Files
+
 - New: `greenhouse-targets.json`, `scripts/lib/fetch-json.js`, `scripts/lib/html-to-text.js`,
   `scripts/lib/html-to-text.test.js`
 - Modified: `scripts/ingest.js`, `scripts/digest.js`, `data/schema.sql`, `README.md`
 
 ## Verify
+
 1. `node --test scripts/lib/` — html-to-text cases pass (incl. idempotency).
 2. `node scripts/ingest.js` — writes `data/raw/harness-<date>.json`, `source:"greenhouse"`,
    ~2 Mountain View eng roles, plain-text descriptions, no Sales/Product/Impl-Eng roles;
