@@ -30,6 +30,35 @@ postings in one pull.
 `/ingest-indeed <path>` runs a different targets file instead of the default, for a
 one-off search without editing `search-targets.json`.
 
+## Ingesting Greenhouse boards
+
+`npm run 1ingest-jobs` (`scripts/ingest.js`) pulls jobs from public Greenhouse job
+boards — no scraping, no API key. It reads [greenhouse-targets.json](greenhouse-targets.json),
+one entry per company:
+
+```json
+{ "name": "harness", "board_token": "harnessinc", "departments": ["Engineering"], "locations": ["Mountain View", "San Francisco"] }
+```
+
+- `name` — a label; also the raw filename prefix.
+- `board_token` — the company's Greenhouse board slug (the `boards.greenhouse.io/<token>` part).
+- `departments` — top-level Greenhouse department names. Each resolves to its full subtree,
+  so a role filed under a child dept (e.g. "Software Development" under "Engineering") still
+  matches.
+- `locations` — case-insensitive substrings matched against each job's location.
+
+Each company is written to its own `data/raw/<name>-<date>.json` (`source: "greenhouse"`,
+date in UTC), then `npm run 2normalize-jobs` loads them like any other raw dump. HTML job
+descriptions are converted to plain text at ingest time so every source stores the same
+shape.
+
+Companies are fetched independently — one board failing never stops the others. When a
+board can't be fetched (HTTP error, or a live board that returns no jobs at all, or a
+department name that no longer exists), the run records the reason, still writes files for
+the companies that succeeded, and exits non-zero so the daily Action flags it. Those
+failures are reported in a **Fetch failures** section at the bottom of that day's digest
+issue (each reported once).
+
 ## Leaving feedback on a digest issue
 
 Each job in a digest is headed `### #<id> — <title> @ <company>`. To leave structured

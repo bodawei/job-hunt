@@ -30,3 +30,14 @@ CREATE TABLE IF NOT EXISTS feedback (
 );
 
 CREATE INDEX IF NOT EXISTS idx_feedback_job_id ON feedback(job_id);
+
+-- Fetch failures from ingest.js, surfaced in the daily digest issue. digest_issue_number
+-- mirrors the jobs table: NULL until reported, then stamped so each failure is reported once.
+CREATE TABLE IF NOT EXISTS ingest_failures (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  company TEXT NOT NULL,
+  board_token TEXT,
+  reason TEXT NOT NULL,
+  digest_issue_number INTEGER,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);

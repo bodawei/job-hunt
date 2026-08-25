@@ -1,0 +1,8 @@
+[
+  {
+    "name": "harness",
+    "board_token": "harnessinc",
+    "departments": ["Engineering"],
+    "locations": ["Mountain View", "San Francisco"]
+  }
+]

@@ -42,13 +42,20 @@ function formatAppendixJob(job) {
   return `- #${job.id} — [${job.title}](${job.url}) @ ${job.company} — ${terseReason(job.reasoning)}`;
 }
 
-function buildBody(jobsByCategory, appendixJobs) {
+function formatFailure(failure) {
+  return `- **${failure.company}** — ${failure.reason}`;
+}
+
+function buildBody(jobsByCategory, appendixJobs, failures) {
   const sections = [];
   for (const [category, jobs] of jobsByCategory) {
     sections.push(`## ${category} (${jobs.length})`, '', ...jobs.map(formatJob));
   }
   if (appendixJobs.length > 0) {
     sections.push(`## Fit score: 1/10 (${appendixJobs.length})`, '', ...appendixJobs.map(formatAppendixJob), '');
+  }
+  if (failures.length > 0) {
+    sections.push(`## Fetch failures (${failures.length})`, '', ...failures.map(formatFailure), '');
   }
   return sections.join('\n');
 }
@@ -63,8 +70,14 @@ async function main() {
     )
     .all();
 
-  if (jobs.length === 0) {
-    console.log('No newly-scored jobs to digest.');
+  // Fetch failures not yet reported in any digest. A run that fetched nothing because a
+  // board errored is exactly when the issue must appear, so these can carry a digest alone.
+  const failures = db
+    .prepare('SELECT * FROM ingest_failures WHERE digest_issue_number IS NULL ORDER BY id')
+    .all();
+
+  if (jobs.length === 0 && failures.length === 0) {
+    console.log('No newly-scored jobs or fetch failures to digest.');
     db.close();
     return;
   }
@@ -80,7 +93,7 @@ async function main() {
 
   const today = new Date().toISOString().slice(0, 10);
   const title = `Job Digest — ${today}`;
-  const body = buildBody(jobsByCategory, appendixJobs);
+  const body = buildBody(jobsByCategory, appendixJobs, failures);
 
   ensureLabel();
 
@@ -96,7 +109,16 @@ async function main() {
     update.run(issueNumber, job.id);
   }
 
-  console.log(`Posted digest issue #${issueNumber} with ${jobs.length} jobs: ${url}`);
+  // Stamp reported failures so they're never posted in a later digest.
+  const stampFailure = db.prepare('UPDATE ingest_failures SET digest_issue_number = ? WHERE id = ?');
+  for (const failure of failures) {
+    stampFailure.run(issueNumber, failure.id);
+  }
+
+  console.log(
+    `Posted digest issue #${issueNumber} with ${jobs.length} jobs` +
+      `${failures.length > 0 ? ` and ${failures.length} fetch failures` : ''}: ${url}`
+  );
   db.close();
 }
 
