@@ -1,3 +1,8 @@
+# Code style
+
+- If, while and so on must always enclose their bodies in {}'s.  (No "if true then console.log()" kinds of things)
+- Only add comments when the code in question is not obvious.
+
 # Job Search Automation — Project Context
 
 This file gives Claude Code full context on this project. Read it before doing any work here.
