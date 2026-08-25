@@ -22,7 +22,9 @@ function formatJob(job) {
     `### #${job.id} — [${job.title}](${job.url}) @ ${job.company}`,
     `**Fit score:** ${job.fit_score}/10  **Location:** ${job.location ?? 'unknown'}`,
   ];
-  if (tags.length > 0) lines.push(`**Tags:** ${tags.join(', ')}`);
+  if (tags.length > 0) {
+    lines.push(`**Tags:** ${tags.join(', ')}`);
+  }
   lines.push('', job.reasoning ?? '', '');
   return lines.join('\n');
 }
@@ -31,10 +33,14 @@ function formatJob(job) {
 // sentence, so the first sentence alone is normally the whole explanation already —
 // this just guards against a first sentence that runs long.
 function terseReason(reasoning) {
-  if (!reasoning) return '';
+  if (!reasoning) {
+    return '';
+  }
   const firstSentence = (reasoning.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? reasoning).trim();
   const MAX = 90;
-  if (firstSentence.length <= MAX) return firstSentence;
+  if (firstSentence.length <= MAX) {
+    return firstSentence;
+  }
   return `${firstSentence.slice(0, MAX).replace(/\s+\S*$/, '')}…`;
 }
 
@@ -87,7 +93,9 @@ async function main() {
 
   const jobsByCategory = new Map();
   for (const job of mainJobs) {
-    if (!jobsByCategory.has(job.category)) jobsByCategory.set(job.category, []);
+    if (!jobsByCategory.has(job.category)) {
+      jobsByCategory.set(job.category, []);
+    }
     jobsByCategory.get(job.category).push(job);
   }
 

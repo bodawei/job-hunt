@@ -27,16 +27,22 @@ export async function fetchJson(url, { retries = RETRIES } = {}) {
       const res = await fetch(url, { signal: AbortSignal.timeout(TIMEOUT_MS) });
       if (!res.ok) {
         // 4xx is deterministic — a bad token or path won't fix itself, so fail fast.
-        if (res.status < 500) throw new HttpError(res.status, url);
+        if (res.status < 500) {
+          throw new HttpError(res.status, url);
+        }
         lastError = new HttpError(res.status, url);
       } else {
         return await res.json();
       }
     } catch (err) {
-      if (err instanceof HttpError && err.status < 500) throw err;
+      if (err instanceof HttpError && err.status < 500) {
+        throw err;
+      }
       lastError = err;
     }
-    if (attempt < retries) await sleep(BACKOFF_MS * (attempt + 1));
+    if (attempt < retries) {
+      await sleep(BACKOFF_MS * (attempt + 1));
+    }
   }
   throw lastError;
 }

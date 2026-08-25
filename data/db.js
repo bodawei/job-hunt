@@ -13,7 +13,9 @@ const SCHEMA_PATH = path.join(__dirname, 'schema.sql');
 function ensureColumns(db, table, columns) {
   const existing = new Set(db.prepare(`PRAGMA table_info(${table})`).all().map((row) => row.name));
   for (const [name, type] of Object.entries(columns)) {
-    if (!existing.has(name)) db.exec(`ALTER TABLE ${table} ADD COLUMN ${name} ${type}`);
+    if (!existing.has(name)) {
+      db.exec(`ALTER TABLE ${table} ADD COLUMN ${name} ${type}`);
+    }
   }
 }
 

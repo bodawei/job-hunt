@@ -2,7 +2,9 @@ import { execFileSync } from 'node:child_process';
 import { openDb } from '../data/db.js';
 
 function repoSlug() {
-  if (process.env.GITHUB_REPOSITORY) return process.env.GITHUB_REPOSITORY;
+  if (process.env.GITHUB_REPOSITORY) {
+    return process.env.GITHUB_REPOSITORY;
+  }
   return execFileSync('gh', ['repo', 'view', '--json', 'nameWithOwner', '-q', '.nameWithOwner'], {
     encoding: 'utf8',
   }).trim();
@@ -35,7 +37,9 @@ function parseFeedback(body) {
       continue;
     }
     const fieldMatch = current && line.match(FIELD_LINE);
-    if (fieldMatch) current[fieldMatch[1].toLowerCase()] = fieldMatch[2].trim();
+    if (fieldMatch) {
+      current[fieldMatch[1].toLowerCase()] = fieldMatch[2].trim();
+    }
   }
 
   return blocks.filter((block) => block.reason);
@@ -43,7 +47,9 @@ function parseFeedback(body) {
 
 async function main() {
   const commentId = process.env.COMMENT_ID;
-  if (!commentId) throw new Error('COMMENT_ID env var is required');
+  if (!commentId) {
+    throw new Error('COMMENT_ID env var is required');
+  }
 
   const body = fetchCommentBody(commentId);
   const blocks = parseFeedback(body);
