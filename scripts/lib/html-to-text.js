@@ -48,7 +48,9 @@ function decodeEntities(text) {
 }
 
 export function htmlToText(html) {
-  if (!html) return '';
+  if (!html) {
+    return '';
+  }
   let text = html.replace(/\r\n?/g, '\n');
   // Decode once to recover real tags from Greenhouse's escaped HTML (no-op for literal HTML).
   text = decodeEntities(text);

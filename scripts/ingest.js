@@ -33,10 +33,14 @@ function resolveDeptIds(departments, wantedNames) {
     const stack = [root.id];
     while (stack.length > 0) {
       const id = stack.pop();
-      if (allowed.has(id)) continue;
+      if (allowed.has(id)) {
+        continue;
+      }
       allowed.add(id);
       const dept = byId.get(id);
-      if (dept?.child_ids) stack.push(...dept.child_ids);
+      if (dept?.child_ids) {
+        stack.push(...dept.child_ids);
+      }
     }
   }
   return { allowed, missing };
@@ -71,7 +75,9 @@ async function ingestTarget(target) {
   const jobData = await fetchJson(`${base}/jobs?content=true`);
   const allJobs = jobData.jobs ?? [];
   // A live board with zero postings signals an API/token problem, not a quiet day.
-  if (allJobs.length === 0) throw new Error('board returned no jobs');
+  if (allJobs.length === 0) {
+    throw new Error('board returned no jobs');
+  }
 
   const matched = allJobs.filter(
     (job) =>
@@ -125,7 +131,9 @@ async function main() {
   db.close();
   // Non-zero exit so the daily Action flags a run where any board failed, without losing the
   // companies that succeeded (their files are already written).
-  if (failures > 0) process.exitCode = 1;
+  if (failures > 0) {
+    process.exitCode = 1;
+  }
 }
 
 main();

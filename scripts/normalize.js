@@ -24,11 +24,15 @@ function contentHash(job) {
 }
 
 async function main() {
-  if (!existsSync(RAW_DIR)) return;
+  if (!existsSync(RAW_DIR)) {
+    return;
+  }
   mkdirSync(PROCESSED_DIR, { recursive: true });
 
   const files = readdirSync(RAW_DIR).filter((f) => f.endsWith('.json'));
-  if (files.length === 0) return;
+  if (files.length === 0) {
+    return;
+  }
 
   const db = openDb();
   const insert = db.prepare(`
