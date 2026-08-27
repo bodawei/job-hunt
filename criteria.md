@@ -11,13 +11,22 @@ mechanism for it) — for now, a dealbreaker means score `fit_score` at 1, the m
 and say so explicitly in `reasoning` (e.g. "Dealbreaker: ..."). It will still appear in
 the digest, just at the bottom, until real filtering exists.
 
-- If there is no mention of JavaScript, TypeScript, or a JS/TS framework (React,
-  Vue, Angular, Node.js, Next.js, etc.), but there ARE references to Java, Go or
-  Python in the description: dealbreaker.
+Decide the category first (see Categories below), then apply this rule — don't
+let which specific language is named change the outcome.
+
+- If the category is `backend` — i.e. no meaningful frontend/UI/JavaScript/
+  TypeScript component anywhere in the description — dealbreaker. This applies
+  whether the backend work is named (Java, Go, Python, C/C++, Rust, embedded/
+  kernel/device-driver/hypervisor work, etc.) or the description is vague about
+  tech stack and just generically backend/platform/infrastructure.
 
 ## Nice-to-haves
 
-None yet.
+- Frontend or full-stack work involving JavaScript/TypeScript and a JS/TS
+  framework (React, Vue, Angular, Node.js, Next.js, etc.) — this is core to fit.
+- Mentoring, leading, or setting technical direction for other engineers,
+  especially at a senior+ level.
+- full stack work that seems to have significant front end technology work is a big plus.
 
 ## Soft negatives
 
@@ -25,6 +34,8 @@ Not dealbreakers — each one just nudges `fit_score` down by 1 (see Scoring gui
 and should still be mentioned in `reasoning` when it applies.
 
 - Mentions PowerShell scripting as a requirement.
+- Heavy emphasis on database design, data storage, or query optimization as a
+  core requirement.
 
 ## Categories
 
