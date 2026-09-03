@@ -1,0 +1,196 @@
+{
+  "source": "indeed",
+  "fetched_at": "2026-09-03T20:58:46Z",
+  "jobs": [
+    {
+      "title": "AI Operations Engineering Technical Leader",
+      "company": "Cisco",
+      "location": "Milpitas, CA",
+      "url": "https://to.indeed.com/aatzmyl9lxfp",
+      "posted_at": "August 01, 2026",
+      "job_type": "Full-time",
+      "compensation": "$197,500 - $322,900 a year",
+      "description": "The application window is expected to close on: 11/27/2026.\n\nMeet the Team: The Cisco AI Software & Platform Group incubates and delivers Generative AI based solutions to reinvent Cisco's existing Products, introducing new offerings that help customers roll out Generative AI at scale, across Security, Enterprise Networking, Collaboration and Splunk portfolios.\n\nYour Impact: Cisco is looking for a highly experienced DevOps Engineer to join our global DevOps team, architecting and building scalable, secure cloud infrastructure and leading adoption of DevOps practices for SaaS platforms.\n\nKey Responsibilities: Implement end-to-end CI/CD workflows in a large-scale, distributed environment. Scale microservice-based platforms across regions with container orchestration (Kubernetes), cost optimization, automated scaling. Lead cross-functional DevOps projects. Advocate automation using Infrastructure as Code (Terraform, Helm, GitOps). Integrate AI-assisted tooling, copilots, and AIOps into DevOps/CI/CD workflows.\n\nMinimum Qualifications: Bachelor's + 8 years DevOps experience, Master's + 5 years, or PhD + 3 years. Experience in CI/CD pipelines and automation tools. Experience with Kubernetes, Docker. Experience with cloud platforms (AWS, Azure, GCP). Scripting/automation skills (Python, Bash, Go).\n\nPreferred Qualifications: Deep CI/CD tooling expertise (Jenkins, GitHub, ArgoCD). Demonstrated success scaling containerized microservices across regions. Proven leadership in cross-functional projects.\n\nCompensation: starting salary range $216,300.00 to $280,800.00 (New York City Metro: $216,300-$322,900; Non-Metro NY/WA: $197,500-$287,300), plus benefits including medical/dental/vision, 401(k) match, paid parental leave, RSUs, and PTO."
+    },
+    {
+      "title": "Full Stack Engineer",
+      "company": "Intuitive (Intuitive Surgical)",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa4pf7qkyjlb",
+      "posted_at": "August 28, 2026",
+      "job_type": null,
+      "compensation": "$134,600 - $227,700 a year",
+      "description": "Sunnyvale, CA. Not Remote. Engineering. JOB217750.\n\nCompany: Intuitive is a global leader in robotic-assisted surgery and minimally invasive care (da Vinci surgical system, Ion).\n\nJob Description: Full Stack Web Development Engineer. Design, enhance and maintain internal websites, web applications and stand-alone Python applications. Full stack capability required — front-end (currently FastAPI and Vue 3) and back-end (currently Red Hat Linux and Microsoft SQL Server, moving to AWS/Azure/Snowflake).\n\nQualifications: Bachelor's degree or higher in Computer Science or Engineering. 3+ years of industry experience as a full stack web developer. Expert in Object Oriented Python, JavaScript, node.js, SQL. Test-driven development. Full stack front-end & back-end web application development. HTML5, CSS, jquery, Ajax, Flask, FastAPI, Vue.js. Microsoft SQL server, SQL database. RESTful APIs, JSON, WebSocket. Cloud platforms (AWS, Azure, Snowflake). Git version control. Familiarity with DevOps/CI/CD. Desired: data analytics, HighCharts, AG-grid controls.\n\nCompensation: Base Compensation Range Region 1: $158,300-$227,700; Region 2: $134,600-$193,500. Onsite, day shift."
+    },
+    {
+      "title": "Sr. Software Engineer II - Full Stack",
+      "company": "Allocate",
+      "location": "Palo Alto, CA",
+      "url": "https://to.indeed.com/aavc4s6f7vpm",
+      "posted_at": "August 18, 2026",
+      "job_type": "Full-time",
+      "compensation": "$145,000 - $175,000 a year",
+      "description": "About Allocate: Allocate is building the operating system for private markets — wealth advisors and clients use the platform to access, transact in, and manage private market investments. Supports 350+ advisory firms, 1,500+ GP relationships, $5B+ in assets on platform.\n\nAbout The Role: As Senior Full Stack Engineer, you will ship features end to end, from Postgres schema and C# APIs through Vue and TypeScript interfaces. Small, independent, cross-functional squad with autonomy. AI-first engineering organization (Claude Code, Cursor, Codex core to workflow), with humans owning every line that ships.\n\nWhat You'll Own — Frontend & Client Experience: Build rich, simple UX using Vue.js and TypeScript. Deliver frontend software that is correct, stable, security compliant. Backend, APIs & Data: Design and implement features/endpoints in C#/.NET backend APIs, schema changes with performance in mind.\n\nWho You Are: 5-10 years building web applications, including 5+ years OOP (C#, Java, or similar). 3+ years C# experience, 2+ years REST APIs. 3+ years Vue.js, 1+ years TypeScript. 5+ years SQL-based databases (Postgres ideally), schema design for performant applications. AI-first development mindset with real production experience using Claude Code/Cursor/Codex. Basic AWS knowledge (S3, CloudFront, ECS/EKS).\n\nNice to Have: ASP.NET Web API, ORM (Dapper, Entity Framework, FluentMigrator). Agentic workflows, MCP integrations. Docker/CI. DevOps (Terraform, AWS, ECS/EKS).\n\nAdditional Details: Hybrid (3 days/week) in Palo Alto. Salary $145,000-$175,000 base plus bonus and equity. Benefits: medical/dental/vision, 401(k), PTO."
+    },
+    {
+      "title": "Staff Software Engineer - Backend",
+      "company": "CYNGN",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aattr2b9226n",
+      "posted_at": "August 28, 2026",
+      "job_type": null,
+      "compensation": "$198,000 - $225,000 a year",
+      "description": "About Cyngn, Inc.: Based in Mountain View, CA, Cyngn is a publicly-traded autonomous technology company deploying self-driving industrial vehicles (autonomous tuggers) to factories and warehouses across North America. Under 100 employees but publicly traded.\n\nAbout the role: As Staff Software Engineer for the SaaS platform team, you will develop Cyngn's fleet management system for autonomous industrial vehicles — real-time control and monitoring, cloud-based, scalable, high-performance.\n\nWhat you'll do: Architect and lead development of a cloud-native fleet management system for real-time control/monitoring of autonomous vehicles. Design scalable, distributed systems for high-volume real-time data processing. Develop robust APIs and microservices. Create algorithms for route optimization, task scheduling, resource allocation. Implement ML capabilities for predictive maintenance. Lead a team of engineers, mentor junior developers.\n\nQualifications: 10+ years of software development experience, strong focus on backend systems and distributed architectures. Experience building/scaling cloud-native SaaS platforms (IoT/robotics domains preferred). Expert-level proficiency in Python, Go, Java, or C++. Deep cloud technology understanding (AWS/Azure/GCP). Event-driven architectures (Kafka, RabbitMQ, Pulsar). Database design (SQL and NoSQL). WebSocket-based real-time communication. Containerization/orchestration (Docker, Kubernetes). IaC/CI/CD (Terraform, GitOps). Track record leading dev teams.\n\nBonus: IoT platforms, ROS, autonomous vehicle tech. Time-series databases. Edge computing. Embedded software development.\n\nCompensation: $198,000 - $225,000 a year, plus health/life/disability insurance (Cyngn funds 100% of premiums), 401(k), commuter benefits, flexible vacation, remote/hybrid options, sabbatical after 5 years."
+    },
+    {
+      "title": "Senior, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aazjb2vf2k62",
+      "posted_at": "February 28, 2026",
+      "job_type": null,
+      "compensation": "$108,000 - $234,000 a year",
+      "description": "The Senior Software Engineer will lead development and delivery of scalable software solutions, collaborating cross-functionally to implement features, APIs, and integrations.\n\nAbout the team: Collaborative team of engineers, UX designers, product managers delivering mobile and web solutions using React.js and React-Native, with cloud-native backend services in Java and GraphQL, serving millions of users.\n\nWhat you'll do: Own feature and model delivery. Write clean, efficient code, drive full SDLC including CI/CD and automated testing. Integrate AI/ML components, leverage GenAI tools. Assist in solution design, design reviews. Mentor peers.\n\nWhat you'll bring: Extensive experience in JavaScript, TypeScript, Python, Java, Rust, Dart, or C++. Proficiency with React.js, Node.js, Git, PostgreSQL in Agile environments. Strong solution design, API development, design patterns skills. DevOps, CI/CD, automated testing, monitoring expertise. Ability to lead technical design reviews.\n\nPrimary Location: 860 W California Avenue, Sunnyvale, CA 94086. Salary range: Sunnyvale $117,000-$234,000; Bellevue, WA $108,000-$216,000. Plus bonuses and stock. Benefits include medical/vision/dental, 401(k) match, stock purchase plan, PTO, parental leave."
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Google",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aafgvkbdl9fk",
+      "posted_at": "August 31, 2026",
+      "job_type": "Full-time",
+      "compensation": "$149,400 - $175,000 a year",
+      "description": "Minimum qualifications: Bachelor's degree in Computer Science, Computer Engineering or related field and 1 year of experience in a Software Engineer-related occupation. 1 year of experience in: Software development using Python, C, C++, Java, or JavaScript; algorithm design for system scale/efficiency; root cause analysis/diagnosis; extracting information from code in core languages; validity/verification/performance testing.\n\nAbout the job: At Google DeepMind, a pioneering AI lab, focused on advancing AI development to solve complex global challenges and accelerate product innovation for billions of users, with safety and ethics as highest priority.\n\nResponsibilities: Develop product/system code for assigned sub-tasks, address scoped technical debt. Collaborate via code reviews. Execute comprehensive testing, improve monitoring infrastructure. Triage/resolve system issues via root cause analysis. Maintain technical documentation. Apply foundational Generative AI concepts to basic multi-modal solutions.\n\nCompensation: US base salary range $149,400 - $175,000 + 15% bonus target + equity + benefits. Reports to Google Mountain View, CA office, may allow hybrid schedule."
+    },
+    {
+      "title": "Frontend Engineer - Platform Architecture",
+      "company": "SAGE CARE THERAPY SERVICES",
+      "location": "Palo Alto, CA",
+      "url": "https://to.indeed.com/aa2yxpnx6kgt",
+      "posted_at": "April 18, 2026",
+      "job_type": "Full-time",
+      "compensation": "$160,000 - $200,000 a year",
+      "description": "Seeking a Senior Frontend Engineer - Platform Architecture at Sage. As the company scales across customers and use cases, need to build a front-end platform allowing engineers to build new tools, dashboards, and experiences easily — shared components and infrastructure.\n\nResponsibilities: Build a Platform for the Frontend — reusable, modular components as part of a cohesive front-end platform, maintainable and performant. Design and implement scalable, user-centric software solutions for consumer web experiences. Collaborate across a multi-disciplinary org, engage directly with users/healthcare professionals. Deep ownership — own, maintain, scale features end-to-end.\n\nMinimum Qualifications: 5+ years experience designing/engineering scalable frontend architectures — reusable component libraries, state management patterns, performance optimization. Deep expertise with TypeScript, React, HTML5, CSS3. Proficiency with build tools (Webpack, Vite). Excellent communication/teamwork.\n\nPreferred Qualifications: Containerization (Docker), orchestration (Kubernetes) for deploying web apps at scale. CI/CD for experimentation/safe deployment. AI for code generation. Healthcare application experience.\n\nLocation/Work Model: Palo Alto, CA office, hybrid 3 days onsite (Tue/Wed/Thu).\n\nCompensation Range: $160K - $200K."
+    },
+    {
+      "title": "Staff Software Engineer, Back End",
+      "company": "Quicken Inc.",
+      "location": "Menlo Park, CA",
+      "url": "https://to.indeed.com/aaphznwbd4lq",
+      "posted_at": "July 30, 2026",
+      "job_type": "Full-time",
+      "compensation": "$175,000 - $190,000 a year",
+      "description": "Quicken is the leading personal finance management software, helping millions of people for over 30 years.\n\nJob Summary: Seeking an experienced Staff Software Engineer to be a key contributor developing cloud-based services for the small, dynamic Cloud Services team.\n\nResponsibilities: Directly responsible for delivering high-quality, scalable, production-ready backend/server code in Java for Quicken Cloud Services, implementing coding standards, testing, deployment procedures. Partner with cross-functional stakeholders (Engineers, Architects, PMs, QA, Ops). Mentor junior developers.\n\nQualifications: 8+ years software engineering experience, customer-facing SaaS/PaaS track record. 5+ years core Java, Spring Framework, AWS. 3+ years microservice architecture, REST services, JSON. Extensive AWS deployment experience. O/R mapping (Hibernate, JPA). Strong leadership experience. Fluent in Databases/SQL (MySQL preferred). Excellent programming discipline: data structures, complexity analysis, OOP, design patterns, unit testing. API development/3rd-party integration preferred. Mentoring experience.\n\nWhat we offer: Competitive salary and bonus, 401(k) with 5% employer match, exceptional health insurance, onsite lunches. Expected base pay range $175,000-$190,000."
+    },
+    {
+      "title": "Software Engineer, Fullstack",
+      "company": "Glean Technologies",
+      "location": "Mountain View, CA",
+      "url": "https://to.indeed.com/aa6ffdsm8pb6",
+      "posted_at": "May 22, 2026",
+      "job_type": null,
+      "compensation": "$140,000 - $265,000 a year",
+      "description": "About Glean: Glean is the Work AI platform helping everyone work smarter with AI, evolving from enterprise search into a full Work AI ecosystem powering Search, an AI Assistant, and AI agents on one open platform, 100+ enterprise SaaS connectors. Recognized by Fast Company (Top 10 2025), CNBC Disruptor 50, Bloomberg, Forbes AI 50, Gartner. 1,000+ employees, 25+ countries.\n\nAbout the Role: Glean is looking for creative engineers to own and launch delightful user facing features, developing ideas with product managers and designers for modern mobile/desktop browsers.\n\nYou will: Oversee greenfield features from inception through launch. Work with designers, PMs, data scientists. Architect REST APIs backed by scalable server implementations. Write robust, maintainable, testable code. Mentor junior engineers.\n\nAbout you: BA/BS in computer science or related. Experience shipping scalable features across frontend and backend. Experience on a consumer grade web app frontend, preferably React based. Comfortable in or desire to master Golang, Java and TypeScript. Experience building distributed CRUD functionality (SQL and NoSQL).\n\nLocation: Hybrid (3 days/week, SF or Palo Alto office).\n\nCompensation & Benefits: Base salary range $140,000-$265,000 annually, plus equity and benefits. Medical/Vision/Dental, generous time-off, 401k, home office stipend, education/wellness stipends, daily healthy lunches."
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Ushur",
+      "location": "Santa Clara, CA",
+      "url": "https://to.indeed.com/aah27vrfmsvl",
+      "posted_at": "August 18, 2026",
+      "job_type": "Full-time",
+      "compensation": "$188,000 a year",
+      "description": "Santa Clara, California. Responsibilities: Design, develop, test, maintain user-facing applications for scalable, high-performance software systems. Collaborate with cross-functional teams converting requirements and UI/UX mockups into functional, responsive web applications. Build reusable modules/libraries. Convert UI/UX wireframes into responsive web interfaces using AngularJS and Backbone. Integrate RESTful APIs into front-end. Use WebSockets for real-time dynamic pages. Ensure A11Y standards. Participate in CI/CD.\n\nRequirements: Master's degree in Computer Science, Software Engineering, or related. 2 years of experience in front-end or full-stack software engineering. Proficiency in HTML5, CSS3, responsive design, SASS/LESS. Strong JavaScript and AngularJS/Backbone knowledge. Modern JS (ES6+) — Promises, Async/Await. RESTful APIs, WebSockets. Git. Unit testing (Jasmine, Karma). Distributed systems/cloud concepts.\n\nPosition based in Santa Clara HQ, telecommuting 2 days/week permitted.\n\nSalary: $188,000/year. Benefits: unlimited PTO, health/dental/vision, 401(k), stock options, hybrid work model."
+    },
+    {
+      "title": "Full-Stack Engineer",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "url": "https://to.indeed.com/aa8hgky8v44v",
+      "posted_at": "July 30, 2026",
+      "job_type": "Full-time",
+      "compensation": "$139,000 - $257,550 a year",
+      "description": "About the Role: Seeking a Full-Stack Software Engineer to help develop and scale a creative platform for design-intensive workflows, spanning rich interactive frontend experiences and high-performance, resilient backend systems.\n\nWhat You'll Do: Own full-stack implementation from API surfaces/backend services to client runtimes and rich frontend experiences. Take end-to-end responsibility for features. Compose fast, responsive, visually rich frontend interfaces. Architect backend services for heavy traffic loads. Build sandbox-based environments. Own deployment pipelines on Kubernetes-based clusters. Apply AI-assisted engineering tools (Claude Code, Cursor, Codex) as core workflow.\n\nWhat You'll Need: Bachelor's or graduate degree in CS/Software Engineering or relevant experience. Proficiency in modern frontend development (React) building interactive, design-heavy UIs. Backend engineering experience (Node.js, Java, Python, Go). Kubernetes-based infrastructure experience. Direct experience with AI-supported engineering tools. Practical CI/CD experience.\n\nNice to Have: Sandbox-based instance environments for multi-tenant workloads. Build systems, component libraries. Observability tooling.\n\nExpected Pay Range: $139,000-$257,550 annually (California: $177,900-$257,550). Adobe: Acrobat Studio, Express, Firefly, Creative Cloud, Experience Platform/Manager, GenStudio. 30,000+ employees worldwide."
+    },
+    {
+      "title": "Software Developer, Software Engineering",
+      "company": "Tesla",
+      "location": "Palo Alto, CA",
+      "url": "https://to.indeed.com/aatpsrz7l8yp",
+      "posted_at": "May 22, 2026",
+      "job_type": "Full-time",
+      "compensation": "$140,000 - $210,000 a year",
+      "description": "Looking for a Software Engineer to support analytical dashboards and software applications for Tesla Global Supply Chain teams, managing strategic initiatives and continuous improvement.\n\nResponsible for building and maintaining full stack applications for Supply Chain Management. UIs built with React, powered by PHP backend. Extensible design systems, open-source quality solutions, scalable applications.\n\nWhat You'll Do: Contribute to complete SDLC for Supply Chain UI applications. Design, develop, maintain full stack web applications using React, PHP, Python and web tooling. Implement unit/integration/e2e testing. Maintain team values (engineering excellence, curiosity, bias for action). Work with Product Manager and Engineering on requirements.\n\nWhat You'll Bring: Bachelor's in CS, Computer Engineering, Data Science or equivalent. Supply Chain knowledge preferred. 4+ years web application design/development. Git, HTML, CSS responsive design. Strong JavaScript/ES6+. PHP 8, ReactJS, TypeScript, Splunk, MySQL. D3.js, AG-Grid, data visualization libraries. Web fundamentals (HTTP, HTML, REST, JSON). Docker and Kubernetes. CI/CD pipelines and deployment infrastructure.\n\nExpected Compensation: $140,000-$210,000/annual salary + cash and stock awards + benefits (medical, dental, vision, 401(k) match, ESPP)."
+    },
+    {
+      "title": "Software Engineer (App Platform)",
+      "company": "betterworks",
+      "location": "Menlo Park, CA",
+      "url": "https://to.indeed.com/aatx6f97tjzv",
+      "posted_at": "July 30, 2026",
+      "job_type": "Full-time",
+      "compensation": "$147,071.81 - $208,299.34 a year",
+      "description": "Menlo Park, CA. Category: Engineering. This is a remote opportunity.\n\nAbout Betterworks: HR software to align, develop, and activate workforce for business growth, replacing annual review processes with Continuous Performance Management programs.\n\nThe Opportunity: Seeking a motivated Software Engineer (2-5+ years) for the App Platform team, passionate about platform-level challenges (Authentication, Authorization, Event-Driven Architecture), mentored by Senior/Staff engineers.\n\nWhat You'll Own: Develop/enhance core features of enterprise performance management platform, platform-level services. Collaborate with/learn from Senior and Staff engineers. Contribute to Authentication and Authorization systems. Build notification services. Participate in Event-Driven Architecture design.\n\nWhat You Bring: Bachelor's degree or certificate in CS, Engineering, or related. 2-5+ years professional full-stack software development. Proficiency in backend languages (Node.js, Python, or Go) and frontend technologies. Strong interest in platform-level concerns (Auth, Notifications, Event-Driven Architecture). RESTful API design. Databases (relational or NoSQL), Docker.\n\nNice to Have: Docker, Kubernetes for backend deployments. CI/CD. AWS. Agentic Development/MCP familiarity.\n\nFunding: $129 million Series B (Kleiner Perkins, Emergence Capital, 8VC). Benefits: 100% paid Medical, Vision/Dental, flexible time off, paid parental leave, monthly internet stipend."
+    },
+    {
+      "title": "Senior Staff Software Engineer",
+      "company": "Heron Power",
+      "location": "Scotts Valley, CA",
+      "url": "https://to.indeed.com/aajww7ych9l9",
+      "posted_at": "July 13, 2026",
+      "job_type": "Full-time",
+      "compensation": "$200,000 - $240,000 a year",
+      "description": "Heron Power is a startup building cutting-edge power electronics for the 21st-century grid, debottlenecking growth of electricity generation/consumption with scalable hardware. First focus: better converters (inverters & rectifiers) connecting large-scale renewables, storage, and loads to the grid.\n\nJob Overview: As Senior Staff Software Engineer, one of the most senior ICs on the Software team, setting technical direction for systems running Heron Power — from the Build platform powering the factory floor/supply chain to internal tools, services, data infrastructure. Architect and build software end-to-end: backend services, data pipelines, developer tooling, cloud/deployment infrastructure.\n\nHow You Will Contribute: Architecture & Systems Design — set technical direction for major systems, services, data models, APIs. Hands-On Software Development — write/ship production code across the stack. Cloud & Infrastructure — own AWS provisioning, IaC with Terraform/Pulumi. CI/CD & Developer Experience — build pipelines with GitHub Actions. Kubernetes & Deployment. Observability & Reliability — Grafana/Prometheus. Security & Data Integrity. Technical Leadership & Mentorship.\n\nMust-Have Requirements: Master's degree in CS, Engineering, or related; equivalent experience considered. 10+ years professional software engineering experience, including significant Staff/Principal IC time owning large production systems. Deep backend/distributed systems expertise. Strong proficiency in Go, Python, TypeScript/JavaScript or similar. AWS/cloud infrastructure, containers, Kubernetes. CI/CD pipeline ownership (GitHub Actions). Observability, security, operational best practices. Track record leading ambiguous cross-functional projects and mentoring.\n\nNice-to-Haves: Manufacturing/supply chain/hardware software experience. Standing up platforms from greenfield at a startup. Relational databases/SQL, data pipelines/warehousing. Event-driven architectures, message queues, telemetry data. Linux, Git, CLI expertise.\n\nCompensation: $200,000-$240,000 per year, plus equity and benefits."
+    },
+    {
+      "title": "Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa8cxspthtsy",
+      "posted_at": "February 28, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "Seeking a Staff, Software Engineer (Back End) for the Catalog Engineering team, developing high performance, scalable Catalog Service for millions of Walmart customers. Design/develop integrations with a next-gen event-driven, microservice-based downstream application.\n\nAbout the Team: Walmart Catalog team enhancing Seller/supplier experiences for catalog setup and platform management. Tech stack includes Java for backend services.\n\nWhat you'll do: Design/develop highly scalable services. Lead by example as an exceptional developer. Troubleshoot production issues, root cause analysis. Provide mentorship to junior team members. Work in Agile environment. Stay current with GenAI trends.\n\nWhat you'll bring: Experience with Java and Java-based backend systems. Microservices with Spring Boot, Spring WebFlux, Project Reactor. Internet-scale distributed tech (Solr, Kafka, Mem Cache). Deep Spark engine understanding. J2EE, multithreading, networking. Offline storage, caching, performance tuning. Cloud/CI-CD (Git, Maven, Jenkins). NoSQL (Cosmos DB, Cassandra). Docker/Kubernetes. DevOps practices.\n\nPrimary Location: 860 W California Ave, Sunnyvale, CA 94086. Annual salary range $143,000.00 - $286,000.00, plus bonuses and stock. Benefits include medical/vision/dental, 401(k) match, stock purchase plan, PTO, parental leave."
+    },
+    {
+      "title": "Staff, Software Engineer",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aawcmyyq4jxk",
+      "posted_at": "March 06, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "As a Staff Software Engineer on the OneSource team, you will architect and build scalable, enterprise-grade solutions using Java, Spring Boot, React, and agentic technologies leveraging LLMs and MCPs, integrating with Walmart's core tech platforms, realizing OneSource's vision as the backbone of Walmart's sourcing and product development transformation.\n\nAbout Team: Works with Walmart International, more than 5,200 retail units operating in 23 countries (Canada, Central America, Chile, China, India, Mexico, South Africa, etc.)\n\nWhat you'll do: Design and own the technical architecture, evolve the MCP server's technical foundation (connection management, async patterns, service boundaries). Build robust APIs and integrations. Set engineering standards through code reviews and mentorship. Build and optimize intelligent agents using DSPy/LLM frameworks. Own operational excellence (deployment, configuration, monitoring, security). Bridge technical and business stakeholders.\n\nWhat you'll bring: 10+ years of experience in design and development of highly scalable distributed applications and platforms. Deep expertise in Python, Java, Spring Boot, React, PostgreSQL / Azure SQL and modern agentic technologies (LLMs, MCPs). Proven ability to design and deliver scalable, enterprise-grade solutions.\n\nPrimary Location: 815 Eleventh Ave, Sunnyvale, CA 94089-4731. Annual salary range $143,000.00 - $286,000.00, plus bonuses and stock. Benefits include medical/vision/dental, 401(k) match, stock purchase plan, PTO, parental leave."
+    },
+    {
+      "title": "Staff Software Engineer – Marketplace",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aa62c88hg79d",
+      "posted_at": "March 04, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "Seeking a Staff Software Engineer to design and build enterprise-scale Marketplace platforms supporting seller onboarding, catalog, pricing, inventory, and order management. Backend-heavy role with strong expectations for Java-based distributed systems, plus technical leadership for React-based front-end applications, driving architecture, system design, and engineering excellence across the full stack.\n\nCandidates must be authorized to work in the U.S. No visa sponsorship available now or in the future.\n\nKey Responsibilities: Architect and develop highly scalable backend services using Java and Spring/Spring Boot. Design distributed systems supporting marketplace workflows and real-time transactions. Build event-driven architectures using Apache Kafka. Develop and maintain React + TypeScript front-end applications. Define API contracts (REST/GraphQL). Optimize systems for performance, reliability, scalability. Drive technical standards for coding, testing, CI/CD, observability. Mentor engineers.\n\nRequired Qualifications: 8+ years of professional software engineering experience. Strong expertise in Java and backend development. Experience building distributed, microservices-based systems. Hands-on experience with Apache Kafka and event streaming. Experience with React and modern front-end development. Strong knowledge of TypeScript, JavaScript (ES6+), HTML, CSS. Experience with SQL and NoSQL databases.\n\nPreferred Qualifications: Marketplace/e-commerce experience. Big Data technologies (Spark, Hadoop, Flink). Cloud platforms (AWS, GCP, Azure). Kubernetes and Docker. Micro-frontend architectures. AI/ML integration.\n\nPrimary Location: 680 West California Avenue, Sunnyvale, CA 94086-4834. Annual salary range $143,000.00 - $286,000.00, plus bonuses and stock. Benefits include medical/vision/dental, 401(k) match, PTO, parental leave."
+    },
+    {
+      "title": "Staff Backend Software Engineer",
+      "company": "Moody's",
+      "location": "Newark, CA",
+      "url": "https://to.indeed.com/aa6xhmbw9666",
+      "posted_at": "May 20, 2026",
+      "job_type": "Full-time",
+      "compensation": "$168,100 - $243,700 a year",
+      "description": "Moody's is a global leader in ratings and integrated risk assessment, advancing AI to move from insight to action.\n\nEmployment eligibility to work in the US required; Moody's will not pursue visa sponsorship for this position.\n\nSkills and Competencies: 8-15 years hands-on experience delivering high-impact, multi-team technical projects. Proficiency in Java, C#, Scala. Relational databases (Postgres, MySQL, SQL Server, Oracle) and NoSQL. Strong data structures/algorithms/software design. Production-quality RESTful APIs and microservices. Cloud-native development with Docker/Kubernetes, plus on-prem. Scalability, availability, reliability, security focus. AI tools (Copilot, Claude, ChatGPT) for workflow efficiency.\n\nEducation: Bachelor's or Master's in CS, Engineering, or related, or equivalent experience.\n\nResponsibilities: The Staff Software Engineer leads design/delivery of complex, large-scale technical solutions, influencing strategy, mentoring engineers, driving high-impact outcomes across multiple teams. Define multi-year, multi-team technical strategies. Deliver large-scale, high-stakes projects. Drive engineering alignment. Mentor engineers.\n\nAbout the Team: Data Platform Engineering team supports Risk Modeler, Data Bridge, Underwrite IQ, Unified Data Store within Moody's Insurance group — Java, C#, SQL Server.\n\nCompensation: anticipated hiring base salary range $168,100.00 - $243,700.00, plus incentive compensation and benefits (medical, dental, vision, parental leave, PTO, 401(k), life/disability/accident insurance, ESPP, tuition reimbursement)."
+    },
+    {
+      "title": "(USA) Staff, Software Engineer (Front End)",
+      "company": "Walmart",
+      "location": "Sunnyvale, CA",
+      "url": "https://to.indeed.com/aavhvz89fryd",
+      "posted_at": "August 10, 2026",
+      "job_type": null,
+      "compensation": "$143,000 - $286,000 a year",
+      "description": "Role summary: As a Staff Software Engineer at Walmart, you will lead the design and delivery of scalable platform capabilities, driving the full software development lifecycle with a focus on cloud-native architecture and AI/ML integration, providing technical leadership and mentoring engineering teams.\n\nAbout the team: The Walmart Business (B2B) group delivers solutions empowering organizations to meet their goals leveraging Walmart's fulfillment centers, stores, merchants, and technology, focusing on purchasing, onboarding, marketing, support, and operations.\n\nWhat you'll do: Define and champion front-end architecture for complex, high-traffic customer experiences. Build high-quality web experiences using React, TypeScript, HTML5, CSS. Shape cross-team technical strategy with Product, UX, backend, platform, data engineering teams. Set and evolve engineering standards (component architecture, state management, testing, observability, performance, accessibility). Provide organization-level technical leadership, lead architecture/design reviews, mentor engineers. Own end-to-end delivery.\n\nWhat you'll bring: 8+ years of professional software engineering experience leading complex technical initiatives. Deep expertise in React, TypeScript, JavaScript, HTML5, CSS. Strong front-end architecture and system design skills (component architecture, state management, caching, rendering strategies, bundle optimization). Strong experience designing frontend/backend integration patterns and API contracts (REST; GraphQL a plus). Experience with Node.js, cloud-native platforms (GCP, Azure), experimentation/A/B testing, design systems, micro-frontends is a plus.\n\nPrimary Location: 1375 Crossman Ave, Sunnyvale, CA 94089-1114. Annual salary range $143,000.00 - $286,000.00, plus bonuses and stock. Benefits include medical/vision/dental, 401(k) match, PTO, parental leave."
+    }
+  ]
+}
